@@ -13,10 +13,8 @@ const Header = () => {
       <div className={styles.container}>
         <div className={styles.content}>
       <h1 className={styles.title}>
-      COMPROMETIMENTO
-      <br />
-      E RESPONSABILIDADE
-      <br />
+      COMPROMETIMENTO E  <br />
+      RESPONSABILIDADE <br />
       COM OS SEUS <span>SONHOS</span>
     </h1>
 

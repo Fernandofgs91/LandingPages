@@ -1,10 +1,10 @@
 .texto {
-  width: fit-content;
+  width: fit-content; /* largura mínima para o conteúdo */
 
-  display: flex;
-  align-items: center;
+  display: flex;  /* alinha o texto e o ícone horizontalmente */
+  align-items: center; /* centraliza verticalmente o conteúdo */  
   justify-content: center;
-  gap: 10px;
+  gap: 10px;  /* espaço entre o texto e o ícone */
 
   text-decoration: none;
   color: #ffffff;
@@ -16,7 +16,7 @@
     #153376 100%
   );
 
-  background-size: 200% 200%;
+  background-size: 200% 200%;  /* para o efeito de animação */
 
   padding: 16px 32px;
 
