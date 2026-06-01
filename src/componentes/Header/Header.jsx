@@ -1,21 +1,15 @@
 import React from "react";
 import CTA from "../CTA/CTA";
 import styles from "./Header.module.css";
-import fotoProjeto from "../../assets/header/fotoheader.png";
+
 import plantaImg from "../../assets/header/imagemprojetoheader.png";
 
 const Header = () => {
   return (
     <section
-      id="header"
-      className={styles.hero}
-      style={{
-        backgroundImage: `url(${fotoProjeto})`,
-      }}
-    >
+      id="header"  className={styles.hero} >
      
       <div className={styles.overlay}></div>
-
       <div className={styles.container}>
         <div className={styles.content}>
       <h1 className={styles.title}>
@@ -31,8 +25,8 @@ const Header = () => {
             regularização e consultoria, conforme os padrões legais
             normativos dos órgãos municipais.
           </p>
-
-          <CTA />
+             <CTA />
+         
         </div>
  {/* Coluna da Direita: Imagem */}
         <div className={styles.compromissoImageWrapper}>
@@ -43,6 +37,7 @@ const Header = () => {
           />
         </div>
       </div>
+      
     </section>
   );
 };

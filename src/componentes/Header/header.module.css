@@ -1,16 +1,34 @@
 .hero {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  padding: clamp(3rem, 5vw, 5rem) 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   position: relative;
   overflow: hidden;
-
-  background: #e9e9e9;
-
   min-height: 100vh;
-
   display: flex;
   align-items: center;
-
   padding: 4rem 2rem;
 }
+
+
+/* Imagem de fundo usando pseudo-elemento - NÃO SOME MAIS */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/header/fotoheader.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* Ajuste a transparência aqui */
+  z-index: 0;
+  pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
+}
+
+
 
 /* ==========================
    TRIÂNGULO VERDE
@@ -57,9 +75,10 @@
   flex: 1;
   display: flex;
   justify-content: flex-end;
-  padding-right: 5rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding-right: 2rem;
+  padding-left: 1.5rem;
+  /* padding-top: 2rem;
+  padding-bottom: 2rem; */
 }
 
 .compromissoImg {
@@ -82,7 +101,7 @@
 
   align-items: center;
 
-  gap: 4rem;
+  gap: 5rem;
 
   position: relative;
   z-index: 3;

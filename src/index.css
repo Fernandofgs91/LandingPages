@@ -18,14 +18,17 @@
 
 body {
     background-color: var(--branco);
+ 
 }
 
 section {
     display: flex;
-    padding: clamp(40px, 8vw, 100px) 0px;
+    padding: clamp(40px, 8vw, 100px) 0;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
     align-items: center;
     justify-content: center;
-    display: flex;
     flex-direction: column;
 }
 
@@ -37,7 +40,6 @@ details::details-content {
     block-size: 0;
     transition: block-size .5s ease,
     content-visibility .5s ease;
-    transition-behavior: allow-discrete;
 }
 
 details[open]::details-content {
