@@ -1,0 +1,166 @@
+.headerPrincipal {
+    width: 100%;
+    max-height: 1000px;
+    height: auto;
+    aspect-ratio: 50 / 22;
+
+    background-image:
+        linear-gradient(to left, var(--branco) 35%, transparent 80%),
+        linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.5)),
+        url("../../assets/header/escritorio.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.headerPrincipal h2 {
+    font-size: clamp(1.5rem, 2.2vw, 2.8rem);
+    font-weight: bold;
+    margin: 10px 0px;
+}
+
+.headerPrincipal h3 {
+    font-size: clamp(0.9rem, 1vw, 1.4rem);
+    margin: 10px 0px 30px 0px;
+}
+
+.headerPrincipal > div {
+    max-width: 800px;
+    width: 50%;
+    margin-right: 5%;
+    padding: 40px;
+}
+
+/* Tablets Grande (1024px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1024px) {
+    .headerPrincipal h2 {
+        font-size: 2.2rem;
+    }
+
+    .headerPrincipal h3 {
+        font-size: 1rem;
+    }
+}
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .headerPrincipal {
+        aspect-ratio: auto;
+        background-size: cover;
+        background-position: center;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .headerPrincipal > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 85%;
+        max-width: none;
+        margin-right: 0;
+        padding: 30px;
+        text-align: center;
+
+        background: rgba(255, 255, 255, 0.6);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .headerPrincipal h2 {
+        font-size: 1.8rem;
+        color: #111;
+    }
+
+    .headerPrincipal h3 {
+        font-size: 1rem;
+        color: #222;
+    }
+}
+
+/* Tablets Médios (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+    .headerPrincipal > div {
+        width: 80%;
+        padding: 35px;
+    }
+
+    .headerPrincipal h2 {
+        font-size: 2rem;
+    }
+
+    .headerPrincipal h3 {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celulares (até 600px) */
+@media (max-width: 600px) {
+    .headerPrincipal {
+        background-image:
+        linear-gradient(rgba(0, 20, 50, 0.7), rgba(0, 20, 50, 0.5)),
+        url("../../assets/header/escritorio.jpg");
+
+        flex-direction: column;
+        aspect-ratio: auto;
+        background-size: cover;
+        background-position: center;
+        padding: 30px 10px;
+        text-align: center;
+        max-height: none;
+    }
+
+    .headerPrincipal > div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 95%;
+        padding: 20px;
+        margin-right: 0;
+        background: rgba(255, 255, 255, 0.5);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .headerPrincipal h2 {
+        font-size: clamp(1.3rem, 6vw, 1.8rem);
+        margin-bottom: 10px;
+        color: #111;
+    }
+
+    .headerPrincipal h3 {
+        font-size: clamp(0.85rem, 4vw, 1.1rem);
+        margin-bottom: 20px;
+        color: #222;
+    }
+}
+
+/* Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+    .headerPrincipal {
+        padding: 20px 10px;
+    }
+
+    .headerPrincipal > div {
+        width: 98%;
+        padding: 15px;
+    }
+
+    .headerPrincipal h2 {
+        font-size: 1.3rem;
+        margin-bottom: 8px;
+    }
+
+    .headerPrincipal h3 {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+    }
+}

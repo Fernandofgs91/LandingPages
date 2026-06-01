@@ -1,0 +1,307 @@
+/* ==========================================
+   SEÇÃO DE BENEFÍCIOS
+========================================== */
+
+.beneficios {
+  padding: clamp(3rem, 5vw, 5rem) 1rem;
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+}
+
+.beneficios::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/Beneficios/fotobeneficios.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* Ajuste a transparência aqui */
+  z-index: 0;
+  pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
+}
+
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.title {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700;
+  color: #605151;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.highlight {
+  color: #1e40af;
+  position: relative;
+}
+
+.subtitle {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: #605151;
+  max-width: 750px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ==========================================
+   DESTAQUE - PROJETOS OTIMIZADOS
+========================================== */
+
+.destaque {
+  background: #1e40af;
+  border-radius: 16px;
+  padding: 1.25rem 2rem;
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.2);
+}
+
+.destaqueIcon {
+  color: #fbbf24;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.destaqueIcon svg {
+  font-size: 1.5rem;
+}
+
+.destaqueTexto {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  color: white;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.destaqueTexto strong {
+  font-weight: 700;
+}
+
+/* ==========================================
+   GRID DE BENEFÍCIOS - 4 cards
+========================================== */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* ==========================================
+   CARD DE BENEFÍCIO
+========================================== */
+
+.card {
+  background: white;
+  color: #1e40af;
+  border-radius: 20px;
+  padding: 1.75rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.1);
+  border-color: #bfdbfe;
+}
+
+.cardIcon {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(135deg, #eff6ff 0%, #bfdbfe 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover .cardIcon {
+  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+  transform: scale(1.05);
+}
+
+.cardIcon svg {
+  font-size: 2rem;
+  color: #1e40af;
+  transition: color 0.3s ease;
+}
+
+.card:hover .cardIcon svg {
+  color: white;
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1e293b;
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+}
+
+.cardDesc {
+  font-size: 0.85rem;
+  color: #183784; /* ajustado conforme solicitado */
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================
+   RESPONSIVIDADE
+========================================== */
+
+/* Desktop médio */
+@media (max-width: 1024px) {
+  .grid {
+    gap: 1.25rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+  
+  .cardTitle {
+    font-size: 0.9rem;
+  }
+  
+  .cardDesc {
+    font-size: 0.8rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .destaque {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+  }
+
+  .card {
+    padding: 1.5rem;
+  }
+
+  .cardIcon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .cardIcon svg {
+    font-size: 1.75rem;
+  }
+
+  .cardTitle {
+    font-size: 0.95rem;
+  }
+
+  .cardDesc {
+    font-size: 0.85rem;
+  }
+}
+
+/* Celular */
+@media (max-width: 576px) {
+  .beneficios {
+    padding: 3rem 0.75rem;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 1.25rem;
+    max-width: 400px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .cardIcon {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 1rem;
+  }
+
+  .cardIcon svg {
+    font-size: 1.5rem;
+  }
+
+  .destaque {
+    padding: 0.875rem 1rem;
+    gap: 0.5rem;
+  }
+
+  .destaqueIcon svg {
+    font-size: 1.25rem;
+  }
+
+  .destaqueTexto {
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+
+.destaque {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+  animation-delay: 0s;
+}

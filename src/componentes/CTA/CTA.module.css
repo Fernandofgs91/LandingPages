@@ -1,0 +1,112 @@
+.texto {
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  text-decoration: none;
+  color: #ffffff;
+
+  background: linear-gradient(
+    135deg,
+    #153376 0%,
+    #1e4aa8 50%,
+    #153376 100%
+  );
+
+  background-size: 200% 200%;
+
+  padding: 16px 32px;
+
+  border-radius: 14px;
+
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  border: 1px solid rgba(255, 255, 255, 0.15);
+
+  box-shadow:
+    0 10px 25px rgba(21, 51, 118, 0.25),
+    0 4px 10px rgba(21, 51, 118, 0.15);
+
+  transition: all 0.35s ease;
+
+  margin-top: 40px;
+  margin-bottom: 40px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* brilho moderno */
+.texto::before {
+  content: "";
+
+  position: absolute;
+  top: 0;
+  left: -120%;
+
+  width: 60%;
+  height: 100%;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.25),
+    transparent
+  );
+
+  transition: 0.8s;
+}
+
+.texto:hover::before {
+  left: 150%;
+}
+
+.texto:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 20px 35px rgba(21, 51, 118, 0.35),
+    0 8px 15px rgba(21, 51, 118, 0.2);
+
+  background-position: right center;
+}
+
+.texto:active {
+  transform: translateY(-1px);
+}
+
+.texto span {
+  display: flex;
+  align-items: center;
+}
+
+/* =========================
+   RESPONSIVO
+========================= */
+
+@media (max-width: 768px) {
+  .texto {
+    width: 100%;
+    max-width: 380px;
+
+    padding: 15px 24px;
+
+    font-size: 1rem;
+
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .texto {
+    width: 100%;
+    padding: 14px 20px;
+    font-size: 0.95rem;
+  }
+}

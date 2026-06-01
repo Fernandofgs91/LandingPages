@@ -1,0 +1,54 @@
+.imagemTexto {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.imagemTexto p {
+    margin: 10px;
+}
+
+.imagemTexto > img {
+        height: 100%;
+        filter: invert(1);
+}
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  .imagemTexto {
+    height: 28px;
+    margin-bottom: 8px;
+  }
+
+  .imagemTexto p {
+    margin: 8px;
+    font-size: 1rem;
+  }
+
+  .imagemTexto > img {
+    height: 24px;
+  }
+}
+
+/* Celulares (até 600px) */
+@media (max-width: 600px) {
+  .imagemTexto {
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+
+  .imagemTexto p {
+    margin: 6px 0;
+    font-size: 0.95rem;
+  }
+
+  .imagemTexto > img {
+    height: 20px;
+  }
+}

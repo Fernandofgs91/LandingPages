@@ -1,0 +1,266 @@
+/* Footer.module.css */
+
+/* ESTILOS PRINCIPAIS DO RODAPÉ */
+.rodape {
+  background-color: #183784;
+  color: white;
+  width: 100%;
+  padding: clamp(20px, 4vw, 30px) clamp(20px, 8vw, 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: clamp(50px, 8vw, 200px);
+  box-sizing: border-box;
+}
+
+/* ==================== COPYRIGHT ==================== */
+.copyright {
+  background-color: #122963;
+  color: white;
+  padding: 10px clamp(15px, 4vw, 30px);
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.copyright p {
+  font-size: clamp(0.85rem, 2vw, 16px);
+  margin: 5px 0;
+  text-align: center;
+}
+
+/* ==================== COLUNA DA ESQUERDA ==================== */
+.left-content {
+  flex: 1;
+  max-width: 450px;
+  text-align: left;
+}
+
+.left-content p {
+  font-size: clamp(0.9rem, 2vw, 16px);
+  margin: 5px 0;
+  text-align: left;
+}
+
+.maps-link {
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: clamp(0.9rem, 2vw, 16px);
+}
+
+.maps-link:hover {
+  text-decoration: underline;
+}
+
+/* ==================== CONTAINER DO MAPA ==================== */
+.map-container {
+  margin-top: 15px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  margin: 15px 0;
+}
+
+.map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ==================== COLUNA DA DIREITA ==================== */
+.right-content {
+  flex: 0 0 auto;
+  text-align: right;
+}
+
+.right-content p {
+  font-size: clamp(0.9rem, 2vw, 16px);
+  margin: 5px 0;
+  font-weight: bold;
+  text-align: right;
+}
+
+/* ==================== ÍCONES DAS REDES SOCIAIS ==================== */
+.social-icons {
+  display: flex;
+  gap: clamp(15px, 3vw, 20px);
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.social-link {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+  display: inline-flex;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.social-link:hover {
+  transform: scale(1.1);
+}
+
+.social-link:first-child:hover {
+  color: #1877f2;
+}
+
+.social-link:nth-child(2):hover {
+  color: #25d366;
+}
+
+.social-link:nth-child(3):hover {
+  color: #e4405f;
+}
+
+.social-link:last-child:hover {
+  color: #0077b5;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+/* Desktop Grande (1440px+) */
+@media (min-width: 1440px) {
+  .rodape {
+    padding: 40px 80px;
+    gap: 250px;
+  }
+
+  .left-content {
+    max-width: 450px;
+  }
+
+  .map-container {
+    max-width: 400px;
+  }
+
+  .social-icons {
+    gap: 25px;
+  }
+}
+
+/* Tablets Grande (1024px - 1440px) */
+@media (max-width: 1440px) and (min-width: 1024px) {
+  .rodape {
+    gap: 80px;
+  }
+
+  .left-content {
+    max-width: 380px;
+  }
+
+  .map-container {
+    max-width: 320px;
+  }
+}
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+  .rodape {
+    gap: 20px;
+  }
+
+  .left-content {
+    max-width: 350px;
+  }
+
+  .map-container {
+    max-width: 300px;
+  }
+}
+
+/* Tablets Médios (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 768px) {
+  .rodape {
+    flex-direction: row;
+    gap: 30px;
+  }
+
+  .left-content,
+  .right-content {
+    text-align: center;
+  }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+  .rodape {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: clamp(15px, 3vw, 30px) clamp(15px, 4vw, 20px);
+    gap: 25px;
+  }
+
+  .left-content, .right-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .left-content p, .right-content p {
+    text-align: center;
+  }
+
+  .maps-link {
+    display: inline-block;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+
+  .map-container {
+    max-width: 100%;
+    margin: 15px auto;
+  }
+}
+
+/* Celulares Pequenos (até 480px) */
+@media (max-width: 480px) {
+  .rodape {
+    padding: clamp(12px, 2vw, 20px) clamp(12px, 3vw, 15px);
+    gap: 15px;
+  }
+
+  .left-content p, 
+  .right-content p,
+  .maps-link,
+  .copyright p {
+    font-size: clamp(0.8rem, 1.8vw, 14px);
+  }
+
+  .map-container {
+    aspect-ratio: 4 / 3;
+  }
+
+  .social-icons {
+    gap: 12px;
+  }
+}
+
+/* Celulares Muito Pequenos (até 320px) */
+@media (max-width: 320px) {
+  .rodape {
+    padding: 10px 10px;
+    gap: 12px;
+  }
+
+  .copyright p {
+    font-size: 0.75rem;
+  }
+
+  .left-content p, 
+  .right-content p {
+    font-size: 0.75rem;
+  }
+
+  .social-icons {
+    gap: 10px;
+  }
+}

@@ -1,0 +1,352 @@
+/* ==========================================
+   SEÇÃO DE DEPOIMENTOS
+========================================== */
+
+.depoimentos {
+  background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+  padding: clamp(3rem, 5vw, 5rem) 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Imagem de fundo usando pseudo-elemento - NÃO SOME MAIS */
+.depoimentos::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/Depoimentos/fotofundodepoimento.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3; /* Ajuste a transparência aqui */
+  z-index: 0;
+  pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1; /* Garante que o conteúdo fique sobre a imagem */
+}
+
+/* ==========================================
+   CABEÇALHO
+========================================== */
+
+.header {
+  text-align: center;
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+}
+
+.title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #605151;
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #605151;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.subtitle strong {
+  color: #1e40af;
+}
+
+/* ==========================================
+   SWIPER
+========================================== */
+
+.swiperContainer {
+  padding: 1rem 0.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   CARD DEPOIMENTO
+========================================== */
+
+.slide {
+  background: rgba(255, 255, 255, 0.95); /* Levemente transparente para ver o fundo */
+  border-radius: 24px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.0);
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  border: 3px solid #034072;
+}
+
+/* ==========================================
+   ASPAS DECORATIVAS
+========================================== */
+
+.quoteIcon {
+  font-size: clamp(3rem, 8vw, 5rem);
+  font-family: Georgia, serif;
+  color: #1e40af;
+  opacity: 0.12;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  line-height: 1;
+  pointer-events: none;
+}
+
+/* ==========================================
+   AVATAR
+========================================== */
+
+.avatarContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+}
+
+.avatar {
+  width: clamp(65px, 10vw, 85px);
+  height: clamp(65px, 10vw, 85px);
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #bfdbfe;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: #f0f4f9;
+}
+
+/* ==========================================
+   CONTEÚDO
+========================================== */
+
+.content {
+  position: relative;
+  z-index: 1;
+}
+
+.nome {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 0.25rem;
+}
+
+.cidade {
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
+  color: #6b85a0;
+}
+
+.stars {
+  color: #fbbf24;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  letter-spacing: 2px;
+  margin: 0.75rem 0;
+}
+
+.depoimentoTexto {
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.8;
+  color: #1e293b;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+  word-break: break-word;
+}
+
+.projeto {
+  font-size: clamp(0.7rem, 1vw, 0.8rem);
+  color: #1e40af;
+  background: rgba(239, 246, 255, 0.9);
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 500;
+  max-width: 100%;
+}
+
+/* ==========================================
+   BOTÕES DE NAVEGAÇÃO
+========================================== */
+
+.navButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.navButton {
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: #1e40af;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 2;
+}
+
+.navButton:hover {
+  background: #1e40af;
+  color: white;
+  border-color: #1e40af;
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   PAGINAÇÃO
+========================================== */
+
+.swiperPagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 1rem 0 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.customBullet {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(203, 213, 225, 0.8);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.customBulletActive {
+  width: 28px;
+  border-radius: 10px;
+  background: #1e40af;
+}
+
+/* ==========================================
+   SELO DE CONFIANÇA
+========================================== */
+
+.selo {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 100px;
+  padding: 0.875rem 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin: 1rem auto 0;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e2e8f0;
+  flex-wrap: wrap;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.seloIcon {
+  font-size: 1.4rem;
+}
+
+.seloTexto {
+  font-size: 0.875rem;
+  color: #334155;
+}
+
+.seloTexto strong {
+  color: #1e40af;
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 768px) {
+  .slide {
+    border-radius: 20px;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .selo {
+    border-radius: 20px;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width: 576px) {
+  .depoimentos {
+    padding: 3rem 0.75rem;
+  }
+
+  .slide {
+    padding: 1.25rem;
+  }
+
+  .quoteIcon {
+    top: 0.5rem;
+    left: 0.75rem;
+  }
+
+  .depoimentoTexto {
+    line-height: 1.7;
+  }
+
+  .navButtons {
+    gap: 0.75rem;
+  }
+}
+
+/* ==========================================
+   CELULAR PEQUENO
+========================================== */
+
+@media (max-width: 380px) {
+  .slide {
+    padding: 1rem;
+  }
+
+  .selo {
+    padding: 0.8rem;
+  }
+
+  .seloTexto {
+    font-size: 0.75rem;
+  }
+
+  .navButton {
+    width: 36px;
+    height: 36px;
+  }
+}
