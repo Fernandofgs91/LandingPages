@@ -35,11 +35,11 @@ const Header = () => {
           <CTA />
         </div>
  {/* Coluna da Direita: Imagem */}
-        <div className="compromisso-image-wrapper">
+        <div className={styles.compromissoImageWrapper}>
           <img 
             src={plantaImg} 
             alt="Planta arquitetônica de projeto de engenharia" 
-            className="compromisso-img"
+            className={styles.compromissoImg}
           />
         </div>
       </div>

@@ -49,8 +49,11 @@
   width: 60%;
   height: 100%;
 
- 
-  .compromisso-image-wrapper {
+  z-index: 2;
+  pointer-events: none;
+}
+
+.compromissoImageWrapper {
   flex: 1;
   display: flex;
   justify-content: flex-end;
@@ -58,17 +61,13 @@
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
-.compromisso-img {
+
+.compromissoImg {
   max-width: 100%;
   height: auto;
-  border: 8px solid #ffffff; /* Borda branca ao redor da planta */
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Sombra igual ao design */
+  border: 8px solid #ffffff;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
   background-color: white;
-}
- 
-
-  z-index: 2;
-  pointer-events: none;
 }
 
 .container {
@@ -169,6 +168,15 @@
     margin-right: auto;
   }
 
+  .compromissoImageWrapper {
+    justify-content: center;
+    padding: 0 2rem 2rem;
+  }
+
+  .compromissoImg {
+    max-width: 80%;
+  }
+
   .triangulo {
     width: 100%;
     height: 40%;
@@ -206,10 +214,8 @@
 @media (max-width: 992px) {
   /* ... suas outras regras do media query continuam iguais ... */
 
-  .compromisso-image-wrapper {
+  .compromissoImageWrapper {
     justify-content: center;
-    /* Remove o espaçamento extra da direita e aplica igual nas duas laterais */
-    padding-right: 0; 
-    padding: 0 2rem; 
+    padding: 0 2rem 2rem;
   }
 }
