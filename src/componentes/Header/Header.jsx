@@ -1,23 +1,50 @@
-import CallToAction from "../CallToAction/CallToAction";
-import Titulosubtitulo from "../caixas/TituloSubtitulo/TituloSubtitulo";
+import React from "react";
+import CTA from "../CTA/CTA";
+import styles from "./Header.module.css";
+import fotoProjeto from "../../assets/header/fotoheader.png";
+import plantaImg from "../../assets/header/imagemprojetoheader.png";
 
-import styles from "./header.module.css";
+const Header = () => {
+  return (
+    <section
+      id="header"
+      className={styles.hero}
+      style={{
+        backgroundImage: `url(${fotoProjeto})`,
+      }}
+    >
+     
+      <div className={styles.overlay}></div>
 
-function Header() {
-    const data = {
-        titulo: "Descubra-se e transforme sua relação consigo mesmo e com o mundo",
-        subtitulo: "Apoio profissional para adolescentes, universitários, profissionais em meio de carreira, mulheres e muito mais. que buscam o seu desenvolvimento pessoal e emocional."
-    }
+      <div className={styles.container}>
+        <div className={styles.content}>
+      <h1 className={styles.title}>
+      COMPROMETIMENTO
+      <br />
+      E RESPONSABILIDADE
+      <br />
+      COM OS SEUS <span>SONHOS</span>
+    </h1>
 
-    return (
-        <header className={styles.headerPrincipal} id="header">
-            <div>
-                <Titulosubtitulo titulo={data.titulo} subtitulo={data.subtitulo} />
-                <CallToAction/>
-            </div>
-        </header>
-    );
-}
+          <p className={styles.description}>
+            Elaboração de projetos, execução e administração de obra,
+            regularização e consultoria, conforme os padrões legais
+            normativos dos órgãos municipais.
+          </p>
+
+          <CTA />
+        </div>
+ {/* Coluna da Direita: Imagem */}
+        <div className="compromisso-image-wrapper">
+          <img 
+            src={plantaImg} 
+            alt="Planta arquitetônica de projeto de engenharia" 
+            className="compromisso-img"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
 
 export default Header;
-
