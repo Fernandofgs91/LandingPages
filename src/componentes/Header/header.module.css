@@ -4,7 +4,7 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 100vh; 
   display: flex;
   align-items: center;
   padding: 4rem 2rem;
@@ -117,16 +117,15 @@
 
 .title {
   font-family: Georgia, serif;
-
-  /* font-size: clamp(2rem, 4vw, 4rem); */
-
+  font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 700; 
-
-  line-height: 1.05; 
-
+  line-height: 1.1;
   color: #000;
-
   margin-bottom: 2rem;
+
+  /* impede quebras automáticas */
+  word-break: keep-all;
+  overflow-wrap: normal;
 }
 
 .title span {

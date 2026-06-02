@@ -12,11 +12,13 @@ const Header = () => {
       <div className={styles.overlay}></div>
       <div className={styles.container}>
         <div className={styles.content}>
-      <h1 className={styles.title}>
-      COMPROMETIMENTO E  <br />
-      RESPONSABILIDADE <br />
-      COM OS SEUS <span>SONHOS</span>
-    </h1>
+   <h1 className={styles.title}>
+  COMPROMETIMENTO
+  <br />
+  <strong>E RESPONSABILIDADE</strong>
+  <br />
+  COM OS SEUS <span>SONHOS</span>
+</h1>
 
           <p className={styles.description}>
             Elaboração de projetos, execução e administração de obra,
