@@ -67,7 +67,7 @@ const Sobre = () => {
               <div className={styles.cardWrapper}>
                 
                 <div className={`${styles.numero} ${etapa.cor}`}>
-                  {etapa.id}
+                  {etapa.icone}
                 </div>
 
                 <div
@@ -75,10 +75,6 @@ const Sobre = () => {
                     etapa.id === 3 ? styles.cardDestaque : ""
                   }`}
                 >
-                  <div className={styles.icone}>
-                    {etapa.icone}
-                  </div>
-
                   <h3>{etapa.titulo}</h3>
 
                   <p>{etapa.descricao}</p>

@@ -2,7 +2,7 @@ import React from "react";
 import CTA from "../CTA/CTA";
 import styles from "./Header.module.css";
 
-import plantaImg from "../../assets/header/imagemprojetoheader.png";
+// import plantaImg from "../../assets/header/imagemprojetoheader.png";
 
 const Header = () => {
   return (
@@ -29,13 +29,13 @@ const Header = () => {
          
         </div>
  {/* Coluna da Direita: Imagem */}
-        <div className={styles.compromissoImageWrapper}>
+        {/* <div className={styles.compromissoImageWrapper}>
           <img 
             src={plantaImg} 
             alt="Planta arquitetônica de projeto de engenharia" 
             className={styles.compromissoImg}
           />
-        </div>
+        </div> */}
       </div>
       
     </section>
