@@ -1,8 +1,10 @@
 // Depoimentos.jsx
-import React from "react";
+import React, { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
 import CTA from '../CTA/CTA';
+import clientesData from "../../Json/clientes.json";
+
 // Importando os estilos do Swiper
 import "swiper/css";
 import "swiper/css/navigation";
@@ -11,80 +13,55 @@ import "swiper/css/effect-fade";
 import styles from "./depoimentos.module.css";
 import FotoFundo from "../../assets/Depoimentos/fotofundodepoimento.jpeg";
 
-// Importando as imagens dos clientes
-import cliente1 from "../../assets/Depoimentos/man-technologist-dark-skin-tone_1f468-1f3ff-200d-1f4bb.png";
-import cliente2 from "../../assets/Depoimentos/man-technologist-light-skin-tone_1f468-1f3fb-200d-1f4bb.png";
-import cliente3 from "../../assets/Depoimentos/man-technologist-medium-skin-tone_1f468-1f3fd-200d-1f4bb.png";
-import cliente4 from "../../assets/Depoimentos/technologist-light-skin-tone_1f9d1-1f3fb-200d-1f4bb.png";
-import cliente5 from "../../assets/Depoimentos/technologist-medium-dark-skin-tone_1f9d1-1f3fe-200d-1f4bb.png";
-import cliente6 from "../../assets/Depoimentos/woman-technologist-dark-skin-tone_1f469-1f3ff-200d-1f4bb.png";
-
 const Depoimentos = () => {
-  const depoimentos = [
-    {
-      id: 1,
-      nome: "Carlos M.",
-      cidade: "Uberlândia",
-      estrelas: 5,
-      texto: "Excelente atendimento! Regularizaram meu comércio rapidamente, evitando multas e emitindo o AVCB de forma muito eficiente.",
-      imagem: cliente1,
-      projeto: "Regularização comercial"
-    },
-    {
-      id: 2,
-      nome: "Juliana P.",
-      cidade: "Belo Horizonte",
-      estrelas: 5,
-      texto: "A consultoria em engenharia civil foi impecável. Projetos precisos e total acompanhamento da obra, do início ao fim.",
-      imagem: cliente2,
-      projeto: "Consultoria e projetos"
-    },
-    {
-      id: 3,
-      nome: "Roberto S.",
-      cidade: "Araguari",
-      estrelas: 5,
-      texto: "Segurança jurídica e técnica incomparável. Nos ajudaram a aprovar o projeto hospitalar mais complexo do nosso grupo.",
-      imagem: cliente3,
-      projeto: "Projeto hospitalar"
-    },
-    {
-      id: 4,
-      nome: "Mariana L.",
-      cidade: "Contagem",
-      estrelas: 5,
-      texto: "O atendimento foi claro e rápido, e o projeto ficou muito acima do esperado. Recomendo para quem precisa de segurança técnica.",
-      imagem: cliente4,
-      projeto: "Laudo técnico"
-    },
-    {
-      id: 5,
-      nome: "Fernando R.",
-      cidade: "Nova Lima",
-      estrelas: 5,
-      texto: "A equipe entregou todos os prazos e explicou cada etapa com atenção. Me senti muito seguro durante a reforma do meu imóvel.",
-      imagem: cliente5,
-      projeto: "Reforma residencial"
-    },
-    {
-      id: 6,
-      nome: "Ana C.",
-      cidade: "Sete Lagoas",
-      estrelas: 5,
-      texto: "A assessoria de documentação foi impecável, sem burocracia desnecessária. Fiquei muito satisfeita com o resultado final.",
-      imagem: cliente6,
-      projeto: "Documentação e aprovação"
+  const depoimentos = useMemo(() => {
+    const clientes = [...(clientesData.clientes || [])];
+    for (let i = clientes.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [clientes[i], clientes[j]] = [clientes[j], clientes[i]];
     }
-  ];
+    return clientes.slice(0, 6);
+  }, []);
 
   const renderStars = (count) => {
-    return "★".repeat(count) + "☆".repeat(5 - count);
+    const rating = Math.max(0, Math.min(5, Number(count) || 0));
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 >= 0.5;
+    const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
+    const stars = [];
+
+    for (let i = 0; i < fullStars; i += 1) {
+      stars.push(
+        <span key={`full-${i}`} className={styles.star} aria-hidden="true">
+          ★
+        </span>
+      );
+    }
+
+    if (hasHalfStar) {
+      stars.push(
+        <span key="half" className={`${styles.star} ${styles.halfStar}`} aria-hidden="true">
+          ★
+        </span>
+      );
+    }
+
+    for (let i = 0; i < emptyStars; i += 1) {
+      stars.push(
+        <span key={`empty-${i}`} className={`${styles.star} ${styles.emptyStar}`} aria-hidden="true">
+          ★
+        </span>
+      );
+    }
+
+    return stars;
   };
 
   return (
-    <section  id="depoimentos"className={styles.depoimentos}>
+    <section id="depoimentos" className={styles.depoimentos}>
       <div className={styles.container}>
-       <div className={styles.backgroundImage}></div>
+        <div className={styles.backgroundImage} style={{ backgroundImage: `url(${FotoFundo})` }}></div>
+        
         {/* Cabeçalho */}
         <div className={styles.header}>
           <h2 className={styles.title}>Depoimentos de Clientes</h2>
@@ -94,86 +71,87 @@ const Depoimentos = () => {
         </div>
 
         {/* Carrossel com Swiper */}
-        <Swiper
-          modules={[Navigation, Pagination, Autoplay, EffectFade]}
-          effect="fade"
-          fadeEffect={{ crossFade: true }}
-          navigation={{
-            nextEl: `.${styles.swiperNext}`,
-            prevEl: `.${styles.swiperPrev}`,
-          }}
-          pagination={{
-            clickable: true,
-            el: `.${styles.swiperPagination}`,
-            bulletClass: styles.customBullet,
-            bulletActiveClass: styles.customBulletActive,
-          }}
-          autoplay={{
-            delay: 5000,
-            disableOnInteraction: false,
-            pauseOnMouseEnter: true,
-          }}
-          loop={true}
-          speed={600}
-          className={styles.swiperContainer}
-        >
-          {depoimentos.map((depoimento) => (
-            <SwiperSlide key={depoimento.id}>
-              <div className={styles.slide}>
-                {/* Ícone de aspas */}
-                <div className={styles.quoteIcon}>“</div>
+        {depoimentos.length > 0 ? (
+          <Swiper
+            modules={[Navigation, Pagination, Autoplay, EffectFade]}
+            effect="fade"
+            fadeEffect={{ crossFade: true }}
+            navigation={{
+              nextEl: `.${styles.swiperNext}`,
+              prevEl: `.${styles.swiperPrev}`,
+            }}
+            pagination={{
+              clickable: true,
+              el: `.${styles.swiperPagination}`,
+              bulletClass: styles.customBullet,
+              bulletActiveClass: styles.customBulletActive,
+            }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            loop={true}
+            speed={600}
+            className={styles.swiperContainer}
+          >
+            {depoimentos.map((depoimento) => (
+              <SwiperSlide key={depoimento.id}>
+                <div className={styles.slide}>
+                  {/* Ícone de aspas */}
+                  <div className={styles.quoteIcon}>“</div>
 
-                {/* Avatar/Imagem do cliente */}
-                <div className={styles.avatarContainer}>
-                  <img 
-                    src={depoimento.imagem} 
-                    alt={depoimento.nome}
-                    className={styles.avatar}
-                  />
-                </div>
+                  {/* Conteúdo (Sem Imagem) */}
+                  <div className={styles.content}>
+                    <h3 className={styles.nome}>
+                      {depoimento.nome}
+                      {/* Renderiza a cidade apenas se existir no JSON */}
+                      {depoimento.cidade && (
+                        <span className={styles.cidade}> ({depoimento.cidade})</span>
+                      )}
+                    </h3>
+                    
+                    <div className={styles.stars}>
+                      {renderStars(depoimento.estrelas || depoimento.rating)}
+                    </div>
 
-                {/* Conteúdo */}
-                <div className={styles.content}>
-                  <h3 className={styles.nome}>
-                    {depoimento.nome}
-                    <span className={styles.cidade}> ({depoimento.cidade})</span>
-                  </h3>
-                  
-                  <div className={styles.stars}>
-                    {renderStars(depoimento.estrelas)}
+                    <p className={styles.depoimentoTexto}>
+                      "{depoimento.texto || depoimento.depoimento}"
+                    </p>
+
+                    {/* Renderiza o projeto apenas se existir no JSON */}
+                    {depoimento.projeto && (
+                      <span className={styles.projeto}>
+                        {depoimento.projeto}
+                      </span>
+                    )}
                   </div>
-
-                  <p className={styles.depoimentoTexto}>
-                    "{depoimento.texto}"
-                  </p>
-
-                  <span className={styles.projeto}>
-                    {depoimento.projeto}
-                  </span>
                 </div>
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <p style={{ textAlign: 'center' }}>Nenhum depoimento encontrado.</p>
+        )}
 
         {/* Botões de navegação customizados */}
-        <div className={styles.navButtons}>
-          <button className={`${styles.navButton} ${styles.swiperPrev}`} aria-label="Anterior">
-            ‹
-          </button>
-          <button className={`${styles.navButton} ${styles.swiperNext}`} aria-label="Próximo">
-            ›
-          </button>
-        </div>
+        {depoimentos.length > 0 && (
+          <div className={styles.navButtons}>
+            <button className={`${styles.navButton} ${styles.swiperPrev}`} aria-label="Anterior">
+              ‹
+            </button>
+            <button className={`${styles.navButton} ${styles.swiperNext}`} aria-label="Próximo">
+              ›
+            </button>
+          </div>
+        )}
 
         {/* Paginação customizada */}
         <div className={styles.swiperPagination}></div>
 
-        {/* Selo de qualidade */}
-        
-        </div>
-          
-          <CTA text="Quer ser nosso próximo cliente satisfeito? Fale com um especialista!" />
+      </div>
+      
+      <CTA text="Quer ser nosso próximo cliente satisfeito? Fale com um especialista!" />
     </section>
   );
 };
