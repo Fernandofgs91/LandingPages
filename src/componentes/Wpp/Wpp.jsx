@@ -1,6 +1,7 @@
 import { FloatingWhatsApp } from "react-floating-whatsapp";
+import {  } from "react-dom";
 import LogoOffice from "../../assets/Contato/LogoOffice.png";
-
+import Wapp from "./Wpp.module.css";
 function Wpp() {
     return (
         <>

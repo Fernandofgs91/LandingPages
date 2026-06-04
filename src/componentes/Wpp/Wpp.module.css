@@ -1,0 +1,24 @@
+/* Container do WhatsApp */
+.wpp {
+  position: fixed;
+  z-index: 999999 !important; 
+}
+
+/* Corrige possíveis problemas do componente */
+.wpp :global(.floating-whatsapp) {
+  z-index: 999999 !important; 
+}
+
+/* Janela do chat */
+.wpp :global(.floating-whatsapp .whatsapp-chat-box) {
+  z-index: 999999 !important;
+  max-width: 380px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .wpp :global(.floating-whatsapp .whatsapp-chat-box) {
+    width: calc(100vw - 20px) !important;
+    max-width: 350px !important;
+  }
+}
