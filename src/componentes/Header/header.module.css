@@ -4,16 +4,16 @@
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   position: relative;
   overflow: hidden;
-  min-height: 100vh; 
+  min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 4rem 2rem; 
+  padding: 4rem 2rem;
 }
 
 
 /* Imagem de fundo usando pseudo-elemento - NÃO SOME MAIS */
 .hero::before {
-  content: ''; 
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
@@ -24,8 +24,9 @@
   background-position: center;
   background-repeat: no-repeat;
   /* opacity: 0.7;  */
-  z-index: 0; 
-  pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
+  z-index: 0;
+  pointer-events: none; 
+  /* ESSENCIAL: permite clicar através da imagem */
 }
 
 
@@ -34,7 +35,7 @@
    TRIÂNGULO VERDE
 ========================== */
 
-.triangulo {
+/* .triangulo {
   position: absolute;
 
   top: 0;
@@ -45,14 +46,12 @@
 
   background: #b6cab3;
 
-  clip-path: polygon(
-    100% 0,
-    100% 100%,
-    45% 40%
-  );
+  clip-path: polygon(100% 0,
+      100% 100%,
+      45% 40%);
 
   z-index: 1;
-}
+} */
 
 /* ====================================
    LOCAL PARA IMAGEM NO TRIÂNGULO
@@ -112,13 +111,13 @@
 ========================== */
 
 .content {
-  max-width: 540px; 
+  max-width: 540px;
 }
 
 .titleHeader {
   font-family: Georgia, serif;
   font-size: clamp(1.5rem, 4vw, 4rem);
-  font-weight: 700; 
+  font-weight: 700;
   line-height: 1.1;
   color: #000;
   margin-bottom: 2rem;
@@ -163,7 +162,7 @@
 
   box-shadow:
     0 0 0 2px #bfbfbf,
-    0 10px 30px rgba(0,0,0,.15);
+    0 10px 30px rgba(0, 0, 0, .15);
 }
 
 /* ==========================
@@ -201,11 +200,9 @@
     bottom: 0;
     top: auto;
 
-    clip-path: polygon(
-      0 100%,
-      100% 0,
-      100% 100%
-    );
+    clip-path: polygon(0 100%,
+        100% 0,
+        100% 100%);
   }
 
   .image {
@@ -227,7 +224,7 @@
   .descriptionHeader {
     font-size: .95rem;
   }
-} 
+}
 
 @media (max-width: 992px) {
   /* ... suas outras regras do media query continuam iguais ... */
@@ -241,11 +238,9 @@
 @media (max-width: 768px) {
   .hero :before {
     /* Cria uma camada esbranquiçada atrás do texto para dar contraste */
-    background-image: linear-gradient(
-      to bottom, 
-      rgba(255, 255, 255, 0.92) 0%, 
-      rgba(255, 255, 255, 0.6) 60%, 
-      rgba(255, 255, 255, 0) 100%
-    ), url('../../assets/header/planodefundoheader1.jpg');
+    background-image: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.92) 0%,
+        rgba(255, 255, 255, 0.6) 60%,
+        rgba(255, 255, 255, 0) 100%), url('../../assets/header/planodefundoheader1.jpg');
   }
 }

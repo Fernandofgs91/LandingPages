@@ -63,7 +63,7 @@ nav > div:first-of-type {
     font-weight: 600;
     color: #183784;
 
-    text-decoration: none;
+    text-decoration: none; 
 
     border-bottom: 3px solid transparent;
 
@@ -82,7 +82,7 @@ nav > div:first-of-type {
 }
 
 .Menu a.active {
-    border-bottom: 3px solid #183784;
+    border-bottom: 3px solid #183784; 
     font-weight: 700;
 }
 
