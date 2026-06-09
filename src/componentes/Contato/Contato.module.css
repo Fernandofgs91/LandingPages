@@ -70,7 +70,7 @@
 .rightColumn {
   width: 100%;
   max-width: 28rem;
-  background-color: rgba(244, 245, 250, 0.7);
+  background-color: rgba(244, 245, 250, 0.7); 
   backdrop-filter: blur(12px);
   padding: clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 0.75rem;
@@ -136,7 +136,7 @@
   outline: none;
   border-color: #153376;
   box-shadow: 0 0 0 2px rgba(21, 51, 118, 0.2);
-  background-color: #ffffff;
+  background-color: #ffffff; 
 }
 
 .buttonContainer {
