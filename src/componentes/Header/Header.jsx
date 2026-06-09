@@ -17,7 +17,7 @@ const Header = () => {
   <br />
   <strong>E RESPONSABILIDADE</strong>
   <br />
-  COM OS SEUS <span>SONHOS</span>
+  COM OS SEUS <span className={styles.highlight}>SONHOS</span>
 </h1>
 
           <p className={styles.descriptionHeader}>
