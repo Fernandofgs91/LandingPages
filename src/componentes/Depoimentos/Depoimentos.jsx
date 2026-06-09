@@ -1,7 +1,7 @@
 // Depoimentos.jsx
 import React, { useMemo } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay, EffectFade } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import CTA from '../CTA/CTA';
 import clientesData from "../../Json/clientes.json";
 
@@ -9,7 +9,6 @@ import clientesData from "../../Json/clientes.json";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-fade";
 import styles from "./depoimentos.module.css";
 import FotoFundo from "../../assets/Depoimentos/fotofundodepoimento.jpeg";
 
@@ -73,9 +72,23 @@ const Depoimentos = () => {
         {/* Carrossel com Swiper */}
         {depoimentos.length > 0 ? (
           <Swiper
-            modules={[Navigation, Pagination, Autoplay, EffectFade]}
-            effect="fade"
-            fadeEffect={{ crossFade: true }}
+            modules={[Navigation, Pagination, Autoplay]}
+            slidesPerView={1}
+            spaceBetween={24}
+            breakpoints={{
+              576: {
+                slidesPerView: 1,
+                spaceBetween: 16,
+              },
+              768: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+              },
+              1024: {
+                slidesPerView: 3,
+                spaceBetween: 24,
+              },
+            }}
             navigation={{
               nextEl: `.${styles.swiperNext}`,
               prevEl: `.${styles.swiperPrev}`,

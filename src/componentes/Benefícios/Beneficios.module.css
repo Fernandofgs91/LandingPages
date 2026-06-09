@@ -21,7 +21,7 @@
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.3; /* Ajuste a transparência aqui */
-  z-index: 0;
+  z-index: 0; 
   pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
 }
 
