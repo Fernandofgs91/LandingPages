@@ -48,11 +48,11 @@ const FAQ = () => {
 
   return (
     <section id="faq" className={styles.faq}>
-      <div className={styles.container}>
+      <div className={styles.containerFaq}>
         {/* Cabeçalho */}
         <div className={styles.header}>
-          <h2 className={styles.title}>Tire suas dúvidas</h2>
-          <p className={styles.subtitle}>
+          <h2 className={styles.titleFaq}>Tire suas dúvidas</h2>
+          <p className={styles.subtitleFaq}>
             Encontre respostas rápidas para as principais dúvidas sobre os nossos serviços e processos técnicos
           </p>
         </div>

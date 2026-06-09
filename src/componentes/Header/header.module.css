@@ -7,13 +7,13 @@
   min-height: 100vh; 
   display: flex;
   align-items: center;
-  padding: 4rem 2rem;
+  /* padding: 4rem 2rem; */
 }
 
 
 /* Imagem de fundo usando pseudo-elemento - NÃO SOME MAIS */
 .hero::before {
-  content: '';
+  content: ''; 
   position: absolute;
   top: 0;
   left: 0;
@@ -89,7 +89,7 @@
   background-color: white;
 }
 
-.container {
+.containerHeader {
   max-width: 1300px;
 
   width: 100%;
@@ -115,7 +115,7 @@
   max-width: 540px; 
 }
 
-.title {
+.titleHeader {
   font-family: Georgia, serif;
   font-size: clamp(1.5rem, 4vw, 4rem);
   font-weight: 700; 
@@ -134,7 +134,7 @@
 
 
 
-.description {
+.descriptionHeader {
   color: #153376;
 
   font-size: 1.1rem;
@@ -172,7 +172,7 @@
 
 @media (max-width: 992px) {
 
-  .container {
+  .containerHeader {
     grid-template-columns: 1fr;
     text-align: center;
   }
@@ -181,7 +181,7 @@
     margin: auto;
   }
 
-  .description {
+  .descriptionHeader {
     margin-left: auto;
     margin-right: auto;
   }
@@ -220,11 +220,11 @@
     padding: 5rem 1rem;
   }
 
-  .title {
+  .titleHeader {
     font-size: 2rem;
   }
 
-  .description {
+  .descriptionHeader {
     font-size: .95rem;
   }
 } 
@@ -235,5 +235,17 @@
   .compromissoImageWrapper {
     justify-content: center;
     padding: 0 2rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero :before {
+    /* Cria uma camada esbranquiçada atrás do texto para dar contraste */
+    background-image: linear-gradient(
+      to bottom, 
+      rgba(255, 255, 255, 0.92) 0%, 
+      rgba(255, 255, 255, 0.6) 60%, 
+      rgba(255, 255, 255, 0) 100%
+    ), url('../../assets/header/planodefundoheader1.jpg');
   }
 }

@@ -26,7 +26,7 @@
 }
 
 
-.container {
+.containerBeneficios {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
@@ -41,7 +41,7 @@
   margin-bottom: clamp(2rem, 4vw, 3rem);
 }
 
-.title {
+.titleBeneficios {
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   color: #605151;
@@ -54,7 +54,7 @@
   position: relative;
 }
 
-.subtitle {
+.subtitleBeneficios {
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: #605151;
   max-width: 750px;

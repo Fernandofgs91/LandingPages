@@ -58,13 +58,13 @@ const Depoimentos = () => {
 
   return (
     <section id="depoimentos" className={styles.depoimentos}>
-      <div className={styles.container}>
+      <div className={styles.containerDepoimentos}>
         <div className={styles.backgroundImage} style={{ backgroundImage: `url(${FotoFundo})` }}></div>
         
         {/* Cabeçalho */}
         <div className={styles.header}>
-          <h2 className={styles.title}>Depoimentos de Clientes</h2>
-          <p className={styles.subtitle}>
+          <h2 className={styles.titleDepoimentos}>Depoimentos de Clientes</h2>
+          <p className={styles.subtitleDepoimentos}>
             A confiança de quem constrói e regulariza com a <strong>Office Engenharia</strong>
           </p>
         </div>

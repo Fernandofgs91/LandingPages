@@ -1,39 +1,67 @@
-import React from 'react';
-import styles from './contato.module.css';
-import PlanoFundo from '../../assets/Contato/planoFundo.png';
+import React, { useRef } from "react";
+import emailjs from "@emailjs/browser";
+import styles from "./contato.module.css";
 
 const Contato = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_owfoo66",
+        "template_9qkidg6",
+        form.current,
+        "MPD_BnPQFignFd1iR",
+      )
+      .then(() => {
+        alert("Mensagem enviada com sucesso!");
+        form.current.reset();
+      })
+      .catch((error) => {
+        console.error("Erro EmailJS:", error);
+        alert("Não foi possível enviar a mensagem.");
+      });
+  };
+
   return (
-    <div id="contato" className={styles.container}>
+    <div id="contato" className={styles.containerContato}>
       <div className={styles.backgroundImage}></div>
       <div className={styles.overlay}></div>
 
       <div className={styles.content}>
-        
-        {/* Coluna da Esquerda - Textos */}
+        {/* Coluna da Esquerda */}
         <div className={styles.leftColumn}>
-          <h1 className={styles.title}>
-            Seu projeto sem surpresas nem<br className={styles.hideOnMobile} /> desperdício. Receba um diagnóstico<br className={styles.hideOnMobile} /> gratuito com um engenheiro.
+          <h1 className={styles.titleContato}>
+            Seu projeto sem surpresas nem
+            <br className={styles.hideOnMobile} />
+            desperdício. Receba um diagnóstico
+            <br className={styles.hideOnMobile} />
+            gratuito com um engenheiro.
           </h1>
-          
-          <p className={styles.subtitle}>
-            Conte o que você precisa e receba orientação técnica<br className={styles.hideOnMobile} /> personalizada. Sem custos, sem compromisso.
+
+          <p className={styles.subtitleContato}>
+            Conte o que você precisa e receba orientação técnica
+            <br className={styles.hideOnMobile} />
+            personalizada. Sem custos, sem compromisso.
           </p>
         </div>
 
-        {/* Coluna da Direita - Formulário */}
+        {/* Coluna da Direita */}
         <div className={styles.rightColumn}>
-          <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
-            
-            {/* Nome Completo */}
+          <form ref={form} className={styles.form} onSubmit={sendEmail}>
+            {/* Nome */}
             <div className={styles.formGroup}>
               <label htmlFor="nome" className={styles.label}>
                 Nome completo *
               </label>
-              <input 
-                type="text" 
+
+              <input
+                type="text"
                 id="nome"
-                placeholder="Ex.: João da Silva" 
+                name="from_name"
+                placeholder="Ex.: João da Silva"
                 className={styles.input}
                 required
               />
@@ -42,26 +70,29 @@ const Contato = () => {
             {/* Email */}
             <div className={styles.formGroup}>
               <label htmlFor="email" className={styles.label}>
-                Email*
+                Email *
               </label>
-              <input 
-                type="email" 
+
+              <input
+                type="email"
                 id="email"
-                placeholder="Ex.: exempl@exem.com" 
+                name="from_email"
+                placeholder="Ex.: exemplo@exemplo.com"
                 className={styles.input}
                 required
               />
             </div>
-
             {/* WhatsApp */}
             <div className={styles.formGroup}>
               <label htmlFor="whatsapp" className={styles.label}>
                 WhatsApp (com DDD) *
               </label>
-              <input 
-                type="tel" 
+
+              <input
+                type="tel"
                 id="whatsapp"
-                placeholder="(11) 9 9999-9999" 
+                name="phone"
+                placeholder="(34) 99999-9999"
                 className={styles.input}
                 required
               />
@@ -72,27 +103,51 @@ const Contato = () => {
               <label htmlFor="projeto" className={styles.label}>
                 Tipo de projeto *
               </label>
-              <select 
+
+              <select
                 id="projeto"
+                name="project_type"
                 className={styles.select}
                 defaultValue=""
                 required
               >
-                <option value="" disabled hidden>Selecione o tipo de projeto...</option>
-                <option value="residencial">Residencial</option>
-                <option value="comercial">Comercial</option>
-                <option value="reforma">Reforma</option>
-                <option value="outro">Outro</option>
+                <option value="" disabled hidden>
+                  Selecione o tipo de projeto...
+                </option>
+
+                <option value="Residencial">Residencial</option>
+
+                <option value="Comercial">Comercial</option>
+
+                <option value="Reforma">Reforma</option>
+
+                <option value="Outro">Outro</option>
               </select>
+            </div>
+
+            {/* Mensagem */}
+            <div className={styles.formGroup}>
+              <label htmlFor="mensagem" className={styles.label}>
+                Descreva seu projeto *
+              </label>
+
+              <textarea
+                id="mensagem"
+                name="from_msg"
+                className={styles.input}
+                rows="5"
+                placeholder="Conte um pouco sobre o que você precisa..."
+                required
+              />
             </div>
 
             {/* Botão */}
             <div className={styles.buttonContainer}>
               <button type="submit" className={styles.button}>
-                <span>🚀</span> Quero falar com um engenheiro
+                <span>🚀</span>
+                Quero falar com um engenheiro
               </button>
             </div>
-
           </form>
         </div>
       </div>
@@ -100,4 +155,4 @@ const Contato = () => {
   );
 };
 
-export default Contato; 
+export default Contato;

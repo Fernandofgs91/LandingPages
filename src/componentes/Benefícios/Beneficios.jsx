@@ -39,14 +39,14 @@ const Beneficios = () => {
 
   return (
     <section id="beneficios" className={styles.beneficios}>
-      <div className={styles.container}>
+      <div className={styles.containerBeneficios}>
         
         {/* Cabeçalho */}
         <div className={styles.header}>
-          <h2 className={styles.title}>
+          <h2 className={styles.titleBeneficios}>
             Por que contratar a <span className={styles.highlight}>Office Engenharia</span>?
           </h2>
-          <p className={styles.subtitle}>
+          <p className={styles.subtitleBeneficios}>
             Do projeto à emissão do AVCB: soluções completas para você construir com tranquilidade e sem riscos de multas.
           </p>
         </div>

@@ -23,7 +23,7 @@
   pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
 }
 
-.container {
+.containerSobre {
   max-width: 1150px; 
   margin: 0 auto; 
   position: relative;
@@ -35,7 +35,7 @@
   margin-bottom: 5rem;
 }
 
-.title {
+.titleSobre {
   font-size: clamp(2rem, 4vw, 3.2rem);
   font-weight: 800;
   color: #605151;
@@ -43,7 +43,7 @@
   line-height: 1.2;
 }
 
-.subtitle {
+.subtitleSobre {
   max-width: 850px;
   margin: 0 auto;
 

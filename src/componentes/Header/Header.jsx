@@ -10,9 +10,9 @@ const Header = () => {
       id="header"  className={styles.hero} >
      
       <div className={styles.overlay}></div>
-      <div className={styles.container}>
+      <div className={styles.containerHeader}>
         <div className={styles.content}>
-   <h1 className={styles.title}>
+    <h1 className={styles.titleHeader}>
   COMPROMETIMENTO
   <br />
   <strong>E RESPONSABILIDADE</strong>
@@ -20,7 +20,7 @@ const Header = () => {
   COM OS SEUS <span>SONHOS</span>
 </h1>
 
-          <p className={styles.description}>
+          <p className={styles.descriptionHeader}>
             Elaboração de projetos, execução e administração de obra,
             regularização e consultoria, conforme os padrões legais
             normativos dos órgãos municipais.

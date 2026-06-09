@@ -47,14 +47,14 @@ const Sobre = () => {
 
   return (
     <section id="sobre" className={styles.sobre}>
-      <div className={styles.container}>
+      <div className={styles.containerSobre}>
         
         <div className={styles.header}>
-          <h2 className={styles.title}>
+          <h2 className={styles.titleSobre}>
             Como funciona a consultoria?
           </h2>
 
-          <p className={styles.subtitle}>
+          <p className={styles.subtitleSobre}>
             Um processo claro e descomplicado, do primeiro contato
             até a regularização do seu imóvel.
           </p>

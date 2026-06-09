@@ -89,23 +89,38 @@
    RESPONSIVO
 ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 768px ) {
   .texto {
-    width: 100%;
-    max-width: 380px;
+    width: 70%; 
+    max-width: 300px; 
 
     padding: 15px 24px;
 
     font-size: 1rem;
 
     text-align: center;
+    text-align: justify;
   }
 }
 
 @media (max-width: 480px) {
   .texto {
     width: 100%;
+    max-width: 280px;
     padding: 14px 20px;
     font-size: 0.95rem;
+    text-align: center;
+    text-align: justify;
+  }
+}
+
+@media (max-width: 360px) {
+  .texto {
+    max-width: 240px;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    gap: 6px;
+    text-align: center;
+    text-align: justify;
   }
 }
