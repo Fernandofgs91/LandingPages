@@ -2,8 +2,8 @@ import Depoimentos from "./Depoimentos/Depoimentos";
 import Contato from "./Contato/Contato";
 import FAQ from "./FAQ/FAQ";
 import Header from "./Header/Header";
-import Autoridade from "./Autoridade/Autoridade";
-import Wpp from "./Wpp/Wpp";
+import Empresa from "./Empresa/Empresa";
+// import Wpp from "./Wpp/Wpp";
 import Sobre from "./Sobre/Sobre";
 import Footer from "./Footer/Footer";
 import Beneficios from "./Benefícios/Beneficios";
@@ -14,11 +14,11 @@ function Main() {
             <Header/>
             <Sobre/>
             <Beneficios/>
-            <Autoridade/>
+            <Empresa/>
             <Depoimentos/>
             <FAQ/>
             <Contato/>
-            <Wpp/>
+            {/* <Wpp/> */}
             <Footer/>
         </main>
     );

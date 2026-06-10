@@ -11,7 +11,7 @@ function NavBar() {
                 <a href="#header">Home</a>
                 <a href="#sobre">O que é?</a>
                 <a href="#beneficios">Benefícios</a>
-                <a href="#autoridade">Autoridade</a>
+                <a href="#empresa">Empresa</a>
                 <a href="#depoimentos">Depoimentos</a>
                 <a href="#faq">FAQ</a>
                 <a href="#contato">Fale conosco</a>

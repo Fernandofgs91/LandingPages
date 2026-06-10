@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+// FAQ.jsx
+import React, { useState, useEffect } from "react";
 import styles from "./FAQ.module.css";
 import CTA from '../CTA/CTA';
-import faqData from '../../json/faqData.json';
 
 const FAQ = () => {
+  const url = "https://raw.githubusercontent.com/Fernandofgs91/PFEJ/refs/heads/main/LandingPages/Json/faqData.json";
+
+  // 1. Inicializado como array vazio para armazenar os dados vindo da URL externa
+  const [faqData, setFaqData] = useState([]);
   const [openItems, setOpenItems] = useState([]);
+
+  // 2. useEffect para buscar as perguntas assim que o componente for exibido na tela
+  useEffect(() => {
+    lerFaqData();
+  }, []);
+
+  async function lerFaqData() {
+    try {
+      const response = await fetch(url);
+      const dadosServidor = await response.json();
+      
+      // Validação defensiva: aceita se o JSON for uma lista direta ou um objeto que contém a lista
+      const dadosFaq = Array.isArray(dadosServidor)
+        ? dadosServidor
+        : (dadosServidor.faqs || dadosServidor.faq || []);
+
+      setFaqData(dadosFaq);
+    } catch (error) {
+      console.error("Erro ao buscar dados do FAQ:", error);
+    }
+  }
 
   const toggleItem = (id) => {
     setOpenItems(prev => {
@@ -27,31 +52,42 @@ const FAQ = () => {
           </p>
         </div>
 
-        <div className={styles.grid}>
-          {faqData.map((item) => (
-            <div 
-              key={item.id} 
-              className={`${styles.faqItem} ${openItems.includes(item.id) ? styles.active : ''}`}
-            >
-              <button
-                className={styles.question}
-                onClick={() => toggleItem(item.id)}
-                aria-expanded={openItems.includes(item.id)}
-              >
-                <span>{item.question}</span>
-                <span className={styles.icon}>
-                  {openItems.includes(item.id) ? '−' : '+'}
-                </span>
-              </button>
-              
-              <div className={styles.answerWrapper}>
-                <div className={styles.answer}>
-                  <p>{item.answer}</p>
+        {/* 3. Condicional para alternar entre a mensagem de carregamento e o Grid de perguntas */}
+        {faqData.length === 0 ? (
+          <p style={{ textAlign: 'center', color: '#666', padding: '20px' }}>Carregando perguntas...</p>
+        ) : (
+          <div className={styles.grid}>
+            {faqData.map((item, index) => {
+              // Garante uma identificação única mesmo se o JSON falhar com o campo id
+              const itemId = item.id || index;
+              const isOpen = openItems.includes(itemId);
+
+              return (
+                <div 
+                  key={itemId} 
+                  className={`${styles.faqItem} ${isOpen ? styles.active : ''}`}
+                >
+                  <button
+                    className={styles.question}
+                    onClick={() => toggleItem(itemId)}
+                    aria-expanded={isOpen}
+                  >
+                    <span>{item.question}</span>
+                    <span className={styles.icon}>
+                      {isOpen ? '−' : '+'}
+                    </span>
+                  </button>
+                  
+                  <div className={styles.answerWrapper}>
+                    <div className={styles.answer}>
+                      <p>{item.answer}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
-        </div>
+              );
+            })}
+          </div>
+        )}
 
       </div>
       <CTA text="Ainda tem dúvidas? Fale com um especialista!" />

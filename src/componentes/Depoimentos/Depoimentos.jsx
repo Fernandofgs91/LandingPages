@@ -1,9 +1,8 @@
 // Depoimentos.jsx
-import React, { useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import CTA from '../CTA/CTA';
-import clientesData from "../../Json/clientes.json";
 
 // Importando os estilos do Swiper
 import "swiper/css";
@@ -13,14 +12,34 @@ import styles from "./depoimentos.module.css";
 import FotoFundo from "../../assets/Depoimentos/fotofundodepoimento.jpeg";
 
 const Depoimentos = () => {
-  const depoimentos = useMemo(() => {
-    const clientes = [...(clientesData.clientes || [])];
-    for (let i = clientes.length - 1; i > 0; i -= 1) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [clientes[i], clientes[j]] = [clientes[j], clientes[i]];
-    }
-    return clientes.slice(0, 6);
+  const url = "https://raw.githubusercontent.com/Fernandofgs91/PFEJ/refs/heads/main/LandingPages/Json/clientes.json";
+  
+  // 1. Inicializado como um array vazio para controlar o estado de carregamento
+  const [depoimentos, setDepoimentos] = useState([]);
+
+  // 2. useEffect para disparar a busca assim que o componente montar na tela
+  useEffect(() => {
+    lerDepoimentos();
   }, []);
+
+  async function lerDepoimentos() {
+    try {
+      const response = await fetch(url);
+      const dadosServidor = await response.json();
+      const clientes = [...(dadosServidor.clientes || [])];
+
+      // Mantendo a sua regra de negócio: Embaralha os depoimentos (Algoritmo Fisher-Yates)
+      for (let i = clientes.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [clientes[i], clientes[j]] = [clientes[j], clientes[i]];
+      }
+
+      // Salva no estado apenas os 6 primeiros depoimentos embaralhados
+      setDepoimentos(clientes.slice(0, 6));
+    } catch (error) {
+      console.error("Erro ao buscar dados dos depoimentos:", error);
+    }
+  }
 
   const renderStars = (count) => {
     const rating = Math.max(0, Math.min(5, Number(count) || 0));
@@ -69,25 +88,18 @@ const Depoimentos = () => {
           </p>
         </div>
 
-        {/* Carrossel com Swiper */}
-        {depoimentos.length > 0 ? (
+        {/* 3. Condicional controlando o estado de Carregamento vs Swiper preenchido */}
+        {depoimentos.length === 0 ? (
+          <p style={{ textAlign: 'center', color: '#fff' }}>Carregando depoimentos...</p>
+        ) : (
           <Swiper
             modules={[Navigation, Pagination, Autoplay]}
             slidesPerView={1}
             spaceBetween={24}
             breakpoints={{
-              576: {
-                slidesPerView: 1,
-                spaceBetween: 16,
-              },
-              768: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              1024: {
-                slidesPerView: 3,
-                spaceBetween: 24,
-              },
+              576: { slidesPerView: 1, spaceBetween: 16 },
+              768: { slidesPerView: 2, spaceBetween: 20 },
+              1024: { slidesPerView: 3, spaceBetween: 24 },
             }}
             navigation={{
               nextEl: `.${styles.swiperNext}`,
@@ -111,14 +123,11 @@ const Depoimentos = () => {
             {depoimentos.map((depoimento) => (
               <SwiperSlide key={depoimento.id}>
                 <div className={styles.slide}>
-                  {/* Ícone de aspas */}
                   <div className={styles.quoteIcon}>“</div>
 
-                  {/* Conteúdo (Sem Imagem) */}
                   <div className={styles.content}>
                     <h3 className={styles.nome}>
                       {depoimento.nome}
-                      {/* Renderiza a cidade apenas se existir no JSON */}
                       {depoimento.cidade && (
                         <span className={styles.cidade}> ({depoimento.cidade})</span>
                       )}
@@ -132,7 +141,6 @@ const Depoimentos = () => {
                       "{depoimento.texto || depoimento.depoimento}"
                     </p>
 
-                    {/* Renderiza o projeto apenas se existir no JSON */}
                     {depoimento.projeto && (
                       <span className={styles.projeto}>
                         {depoimento.projeto}
@@ -143,8 +151,6 @@ const Depoimentos = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-        ) : (
-          <p style={{ textAlign: 'center' }}>Nenhum depoimento encontrado.</p>
         )}
 
         {/* Botões de navegação customizados */}
