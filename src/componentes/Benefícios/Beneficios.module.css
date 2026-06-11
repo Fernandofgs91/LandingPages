@@ -43,7 +43,7 @@
 
 .titleBeneficios {
   font-size: clamp(1.5rem, 4vw, 2rem);
-  font-weight: 700;
+  font-weight: 600; 
   color: #605151;
   margin-bottom: 1rem;
   line-height: 1.3;
@@ -99,7 +99,7 @@
 }
 
 .destaqueTexto strong {
-  font-weight: 700;
+  font-weight: 700; 
 }
 
 /* ==========================================

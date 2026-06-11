@@ -27,7 +27,7 @@
 }
 
 .containerFaq {
-  max-width: 1280px;
+  max-width: 1300px;
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -73,7 +73,7 @@
 .grid {
   display: grid;
   gap: clamp(1rem, 2.5vw, 1.5rem);
-  max-width: 1080px;
+  max-width: 1300px;
   margin: 0 auto clamp(2rem, 4vw, 3rem);
   padding: 0 clamp(0.5rem, 2vw, 1rem);
 }

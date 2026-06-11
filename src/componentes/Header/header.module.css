@@ -20,8 +20,8 @@
   width: 100%;
   height: 100%;
   background-image: url('../../assets/header/planodefundoheader1.jpg');
-  background-size: cover;
-  background-position: center;
+  background-size: cover; 
+  background-position: center; 
   background-repeat: no-repeat;
   /* opacity: 0.7;  */
   z-index: 0;
@@ -29,23 +29,6 @@
   /* ESSENCIAL: permite clicar através da imagem */
 }
 
-
-/* ====================================
-   LOCAL PARA IMAGEM NO TRIÂNGULO
-==================================== */
-
-/* .trianguloImagem {
-  position: absolute;
-
-  top: 0;
-  right: 0;
-
-  width: 60%;
-  height: 100%;
-
-  z-index: 2;
-  pointer-events: none;
-} */
 
 .compromissoImageWrapper {
   flex: 1;
@@ -66,19 +49,13 @@
 }
 
 .containerHeader {
-  max-width: 1300px;
-
+  max-width: 1200px;
   width: 100%;
-
   margin: 0 auto;
-
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-
   align-items: center;
-
   gap: 5rem;
-
   position: relative;
   z-index: 3;
 }
@@ -112,13 +89,9 @@
 
 .descriptionHeader {
   color: #153376;
-
   font-size: 1.1rem;
-
   line-height: 1.4;
-
   max-width: 450px;
-
   margin-bottom: 2rem;
 }
 
@@ -158,6 +131,7 @@
   .descriptionHeader {
     margin-left: auto;
     margin-right: auto;
+    color: #000308f6;
   }
 
   .compromissoImageWrapper {
@@ -210,12 +184,11 @@
   }
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .hero :before {
-    /* Cria uma camada esbranquiçada atrás do texto para dar contraste */
-    background-image: linear-gradient(to bottom,
+       background-image: linear-gradient(to bottom,
         rgba(255, 255, 255, 0.92) 0%,
         rgba(255, 255, 255, 0.6) 60%,
         rgba(255, 255, 255, 0) 100%), url('../../assets/header/planodefundoheader1.jpg');
   }
-}
+} */
