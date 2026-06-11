@@ -57,7 +57,7 @@
 .subtitleBeneficios {
   font-size: clamp(0.95rem, 2vw, 1.1rem);
   color: #605151;
-  max-width: 750px;
+  max-width: 600px; 
   margin: 0 auto;
   line-height: 1.6;
 }
@@ -69,7 +69,7 @@
 .destaque {
   background: #1e40af;
   border-radius: 16px;
-  padding: 1.25rem 2rem;
+  padding: 1.25rem 2rem; 
   margin-bottom: 2.5rem;
   display: flex;
   align-items: center;
@@ -117,14 +117,34 @@
 ========================================== */
 
 .card {
-  background: white;
-  color: #1e40af;
-  border-radius: 20px;
-  padding: 1.75rem;
+  /* Efeito Glassmorphism (Visual iOS) */
+  background: rgba(255, 255, 255, 0.4); 
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  
+  /* Borda sutil para o efeito de vidro */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 24px;
+  
+  /* Layout e Espaçamento */
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  
+  /* Sombra suave */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+  
+  /* Dimensões e Posicionamento */
+  width: 100%;
+  max-width: 250px;
+  margin: 0 auto;
+  position: relative;
+  
+  /* Transição e Alinhamento */
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  align-items: center;
   text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e2e8f0;
 }
 
 .card:hover {
@@ -135,7 +155,7 @@
 
 .cardIcon {
   width: 70px;
-  height: 70px;
+  height: 70px; 
   background: linear-gradient(135deg, #eff6ff 0%, #bfdbfe 100%);
   border-radius: 50%;
   display: flex;
@@ -162,7 +182,7 @@
 
 .cardTitle {
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 800; 
   color: #1e293b;
   margin-bottom: 0.75rem;
   letter-spacing: 0.5px;

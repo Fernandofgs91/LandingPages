@@ -57,7 +57,7 @@
 .subtitleFaq {
   font-size: clamp(0.875rem, 2.5vw, 1.125rem);
   color: #605151;
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
   padding: 0 1rem;

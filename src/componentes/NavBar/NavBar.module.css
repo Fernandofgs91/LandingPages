@@ -1,204 +1,151 @@
 /* =========================
-   HEADER
+   NAVBAR CONTAINER
 ========================= */
-
-nav {
+.Navbar {
     background: #F5F5F5;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     width: 100%;
     box-sizing: border-box;
-
-    padding: clamp(8px, 2vw, 12px) clamp(20px, 4vw, 40px);
-
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-
+    padding: clamp(5px, 1vw, 10px) clamp(20px, 5vw, 80px);
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
+    position: absolute; /* Mantém a navegação acessível no topo */
+    top: 0; 
+    left: 0;
     z-index: 1000;
 }
 
-/* =========================
-   LOGO
-========================= */
-
-nav > div:first-of-type {
+.LogoContainer {
     display: flex;
     align-items: center;
 }
 
 .LogoOffice {
-    width: clamp(65px, 8vw, 70px);
+    width: clamp(50px, 5vw, 65px);
     height: auto;
-
     border-radius: 8px;
     object-fit: cover;
-
-    padding: 3px;
-
     display: block;
 }
 
-.LogoOffice.rounded {
-    border-radius: 15px;
-}
-
-.LogoOffice.circle {
-    border-radius: 50%;
-}
-
 /* =========================
-   MENU
+   LINKS DO MENU (DESKTOP)
 ========================= */
-
 .Menu {
     display: flex;
     align-items: center;
-    gap: clamp(10px, 2vw, 25px);
-
-    flex-wrap: wrap;
+    gap: clamp(15px, 2vw, 32px);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .Menu a {
     font-weight: 600;
     color: #183784;
-
-    text-decoration: none; 
-
+    text-decoration: none;
     border-bottom: 3px solid transparent;
-
-    transition:
-        border-bottom 0.3s ease,
-        transform 0.3s ease;
-
-    font-size: clamp(0.85rem, 1vw, 1rem);
-
+    transition: border-bottom 0.25s ease, transform 0.2s ease, color 0.25s ease;
+    font-size: clamp(0.9rem, 1.1vw, 1.05rem);
     white-space: nowrap;
+    padding: 4px 0;
 }
 
 .Menu a:hover {
-    border-bottom: 3px solid #183784;
-    transform: translateY(-2px);
+    border-bottom: 3px solid #194ea9;
+    color: #194ea9;
+    transform: translateY(-1px);
+    
 }
 
-.Menu a.active {
-    border-bottom: 3px solid #183784; 
-    font-weight: 700;
+/* Transforma o último link em um botão CTA de Alta Conversão */
+/* .CtaLink {
+    background-color: #183784;
+    color: #FFFFFF !important;
+    padding: 10px 20px !important;
+    border-radius: 8px;
+    border-bottom: none !important;
+    box-shadow: 0 4px 6px rgba(24, 55, 132, 0.15);
+}
+
+.CtaLink:hover {
+    background-color: #112863;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 12px rgba(24, 55, 132, 0.25);
+} */
+
+/* =========================
+   BOTÃO HAMBÚRGUER (OCULTO EM DESKTOP)
+========================= */
+.Hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 26px;
+    height: 18px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010;
+}
+
+.Bar {
+    width: 100%;
+    height: 3px;
+    background-color: #183784;
+    border-radius: 4px;
+    transition: all 0.3s ease;
 }
 
 /* =========================
-   DESKTOP GRANDE
+   RESPONSIVIDADE (MOBILE & TABLET)
 ========================= */
-
-@media (max-width: 1440px) {
-
-    nav {
-        padding: 10px 35px;
-    }
-
-    .LogoOffice {
-        width: 65px;
-    }
-}
-
-/* =========================
-   TABLET
-========================= */
-
 @media (max-width: 1024px) {
-
-    nav {
-        padding: 10px 20px;
+    .Hamburger {
+        display: flex;
     }
 
+    /* Transforma o menu em um painel lateral/overlay fluido */
     .Menu {
-        gap: 15px;
-    }
-
-    .Menu a {
-        font-size: 0.95rem;
-    }
-
-    .LogoOffice {
-        width: 55px;
-    }
-}
-
-/* =========================
-   CELULAR
-========================= */
-
-@media (max-width: 768px) {
-
-    nav {
-        padding: 10px 15px;
-    }
-
-    .Menu {
-        gap: 10px;
-    }
-
-    .Menu a {
-        font-size: 0.85rem;
-    }
-
-    .LogoOffice {
-        width: 45px;
-    }
-}
-
-/* =========================
-   CELULAR PEQUENO
-========================= */
-
-@media (max-width: 576px) {
-
-    nav {
-        flex-direction: column;
-        gap: 12px;
-
-        padding: 12px;
-    }
-
-    .Menu {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Escondido para fora da tela */
         width: 100%;
-
+        max-width: 320px; 
+        height: 100vh;
+        background-color: #FFFFFF;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
+        flex-direction: column;
         justify-content: center;
+        align-items: center;
+        gap: 28px;
+        z-index: 1005;
+        padding: 40px;
+    }
 
-        gap: 10px;
-
-        flex-wrap: wrap;
+    .MenuOpen {
+        right: 0; /* Desliza para dentro da tela */
     }
 
     .Menu a {
-        font-size: 0.85rem;
+        font-size: 1.2rem;
+        width: 100%;
+        text-align: center;
+        padding: 8px 0;
     }
 
-    .LogoOffice {
-        width: 50px;
-    }
-}
+    
 
-/* =========================
-   CELULAR MUITO PEQUENO
-========================= */
-
-@media (max-width: 380px) {
-
-    nav {
-        gap: 8px;
-        padding: 10px;
+    /* Animações do Ícone Hambúrguer ativo (X) */
+    .HamburgerActive .Bar:nth-child(1) {
+        transform: translateY(7.5px) rotate(45deg);
     }
 
-    .Menu {
-        gap: 5px;
+    .HamburgerActive .Bar:nth-child(2) {
+        opacity: 0;
     }
 
-    .Menu a {
-        font-size: 0.75rem;
-    }
-
-    .LogoOffice {
-        width: 40px;
+    .HamburgerActive .Bar:nth-child(3) {
+        transform: translateY(-7.5px) rotate(-45deg);
     }
 }

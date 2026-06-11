@@ -90,7 +90,7 @@ const FAQ = () => {
         )}
 
       </div>
-      <CTA text="Ainda tem dúvidas? Fale com um especialista!" />
+      <CTA  />
     </section>
   );
 };

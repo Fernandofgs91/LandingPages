@@ -7,7 +7,7 @@
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 4rem 2rem;
+  padding: clamp(120px, 12vw, 160px) 2rem 4rem 2rem;
 }
 
 
@@ -30,34 +30,11 @@
 }
 
 
-
-/* ==========================
-   TRIÂNGULO VERDE
-========================== */
-
-/* .triangulo {
-  position: absolute;
-
-  top: 0;
-  right: 0;
-
-  width: 60%;
-  height: 100%;
-
-  background: #b6cab3;
-
-  clip-path: polygon(100% 0,
-      100% 100%,
-      45% 40%);
-
-  z-index: 1;
-} */
-
 /* ====================================
    LOCAL PARA IMAGEM NO TRIÂNGULO
 ==================================== */
 
-.trianguloImagem {
+/* .trianguloImagem {
   position: absolute;
 
   top: 0;
@@ -68,7 +45,7 @@
 
   z-index: 2;
   pointer-events: none;
-}
+} */
 
 .compromissoImageWrapper {
   flex: 1;
@@ -157,9 +134,7 @@
 .image {
   width: 100%;
   max-width: 650px;
-
   border: 4px solid #fff;
-
   box-shadow:
     0 0 0 2px #bfbfbf,
     0 10px 30px rgba(0, 0, 0, .15);

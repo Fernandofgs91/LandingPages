@@ -1,11 +1,13 @@
 .titulo {
     font-size: 2.7vw;
+    color: #605151;
 }
 
 .subtitulo {
     font-size: 1.2vw;
     font-weight: normal;
     margin-bottom: 30px;
+    color: #605151;
 }
 
 /* Tablets (até 1024px) */

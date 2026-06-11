@@ -170,7 +170,7 @@ const Depoimentos = () => {
 
       </div>
       
-      <CTA text="Quer ser nosso próximo cliente satisfeito? Fale com um especialista!" />
+      <CTA />
     </section>
   );
 };
