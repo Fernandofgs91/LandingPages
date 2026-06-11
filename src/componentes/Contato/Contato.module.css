@@ -5,9 +5,6 @@
 .containerContato {
   min-height: 100vh; 
   width: 100%; 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,8 +38,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  text-align: left;        /* Alinha o texto à esquerda */
   gap: 1.5rem;
   padding: 0 1rem;
   width: 100%;
@@ -55,7 +52,6 @@
   line-height: 1.2;
   color: white;
   font-family: Georgia, serif;
-  text-align: left;
 }
 
 .subtitleContato {
@@ -64,7 +60,6 @@
   max-width: 32rem;
   color: white;
   font-family: Georgia, serif;
-  text-align: left;
 }
 
 .rightColumn {
@@ -83,7 +78,7 @@
   position: absolute;
   inset: 0; 
   background-image: 
-      linear-gradient(rgba(0, 31, 91, 0.6), rgba(0, 31, 91, 0.6)),
+    linear-gradient(rgba(0, 31, 91, 0.6), rgba(0, 31, 91, 0.6)),
     url('../../assets/Contato/planoFundo.png');
   background-size: cover;
   background-position: center;
@@ -97,7 +92,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  
 }
 
 .formGroup {
@@ -170,6 +164,45 @@
 
 /* ==================== RESPONSIVIDADE ==================== */
 
+/* Tablet e Desktop (768px+) */
+@media (min-width: 768px) {
+  .content {
+    flex-direction: row; /* Corrigido de 'ronw' */
+    gap: 3rem;
+  }
+  
+  .leftColumn {
+    text-align: left;        /* Mantém texto à esquerda no desktop */
+    align-items: flex-start; /* Mantém bloco à esquerda no desktop */
+    gap: 2rem;
+  }
+  
+  .titleContato {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+  }
+  
+  .subtitleContato {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    text-align: left;
+  }
+  
+  .rightColumn {
+    padding: 2rem;
+    flex-shrink: 0;
+  }
+  
+  .hideOnMobile {
+    display: block;
+  }
+}
+
+/* Tablet Grande (992px+) */
+@media (min-width: 992px) {
+  .rightColumn {
+    max-width: 28rem;
+  }
+}
+
 /* Desktop Grande (1400px+) */
 @media (min-width: 1400px) {
   .containerContato {
@@ -215,44 +248,7 @@
   }
 }
 
-/* Tablet e Desktop (768px - 992px) */
-@media (min-width: 768px) {
-  .content {
-    flex-direction: ronw;
-    gap: 3rem;
-  }
-  
-  .leftColumn {
-    text-align: center;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .titleContato {
-    font-size: clamp(1.8rem, 5vw, 3rem);
-  }
-  
-  .subtitleContato {
-    font-size: clamp(1rem, 2vw, 1.25rem);
-    text-align: center;
-  }
-  
-  .rightColumn {
-    padding: 2rem;
-    flex-shrink: 0;
-  }
-  
-  .hideOnMobile {
-    display: block;
-  }
-}
-
-/* Tablet Grande (992px+) */
-@media (min-width: 992px) {
-  .rightColumn {
-    max-width: 28rem;
-  }
-}
+/* ==================== REGRAS MAX-WIDTH (MOBILE) ==================== */
 
 /* Tablet (até 992px) */
 @media (max-width: 992px) {
@@ -263,7 +259,7 @@
 
 /* Tablet Pequeno (até 768px) */
 @media (max-width: 768px) {
-  .container {
+  .containerContato { /* Corrigido de .container */
     padding: 1.25rem;
   }
   
@@ -274,16 +270,16 @@
   .leftColumn {
     padding: 0 0.5rem;
     gap: 1rem;
-    text-align: center;
+    text-align: center;      /* Centraliza no mobile por estética */
     align-items: center;
   }
   
-  .title {
+  .titleContato { /* Corrigido de .title */
     font-size: clamp(1.3rem, 4vw, 1.75rem);
     text-align: center;
   }
   
-  .subtitle {
+  .subtitleContato { /* Corrigido de .subtitle */
     font-size: clamp(0.85rem, 2.5vw, 0.9rem);
     max-width: 100%;
     text-align: center;
@@ -297,7 +293,7 @@
 
 /* Mobile (até 480px) */
 @media (max-width: 480px) {
-  .container {
+  .containerContato { /* Corrigido de .container */
     padding: 1rem;
   }
   
@@ -310,11 +306,11 @@
     padding: 0;
   }
   
-  .title {
+  .titleContato { /* Corrigido de .title */
     font-size: clamp(1.2rem, 3.5vw, 1.5rem);
   }
   
-  .subtitle {
+  .subtitleContato { /* Corrigido de .subtitle */
     font-size: clamp(0.8rem, 2vw, 0.85rem);
     line-height: 1.4;
   }
@@ -345,7 +341,7 @@
 
 /* Celular Muito Pequeno (até 320px) */
 @media (max-width: 320px) {
-  .container {
+  .containerContato { /* Corrigido de .container */
     padding: 0.75rem;
   }
 

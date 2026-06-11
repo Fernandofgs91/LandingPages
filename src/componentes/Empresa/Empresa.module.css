@@ -77,7 +77,8 @@
 .titulo span {
   /* Gradiente otimizado com tons mais escuros para manter o contraste ativo */
   background: linear-gradient(to right, #1d4ed8, #1e40af);
-  -webkit-background-clip: text; 
+  -webkit-background-clip: text;  
+  background-clip: text; /* Boa prática: adicionada a propriedade padrão para compatibilidade futura */
   -webkit-text-fill-color: transparent;
 }
 
