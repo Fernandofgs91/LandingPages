@@ -4,7 +4,6 @@
 
 .depoimentos {
   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-  padding: clamp(3rem, 5vw, 5rem) 1rem;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   position: relative;
   overflow-x: hidden;
@@ -28,7 +27,7 @@
 }
 
 .containerDepoimentos {
-  max-width: 1300px;
+  max-width: var(--page-max);
   width: 100%;
   margin: 0 auto;
   position: relative;
@@ -69,7 +68,7 @@
 ========================================== */
 
 .swiperContainer {
-  padding: 1rem 0.5rem;
+  padding: 1rem 0.25rem;
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
@@ -87,10 +86,10 @@
   
   /* Borda sutil para o efeito de vidro */
   border: 1px solid rgba(4, 22, 141, 0.564); 
-  border-radius: 24px;
+  border-radius: 20px; 
   
   /* Layout e Espaçamento */
-  padding: clamp(1.5rem, 3vw, 2.5rem);
+  padding: var(--card-padding);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -100,7 +99,8 @@
   
   /* Dimensões e Posicionamento */
   width: 100%;
-  max-width: 350px;
+  max-width: 340px;
+  min-height: 390px;
   margin: 0 auto;
   position: relative;
   
@@ -328,7 +328,7 @@
 
 @media (max-width: 768px) {
   .slide {
-    border-radius: 20px;
+    border-radius: var(--card-radius);
   }
 
   .navButton {
@@ -350,11 +350,12 @@
 
 @media (max-width: 576px) {
   .depoimentos {
-    padding: 3rem 0.75rem;
+    padding: var(--section-padding) var(--page-padding);
   }
 
   .slide {
     padding: 1.25rem;
+    min-height: auto;
   }
 
   .quoteIcon {

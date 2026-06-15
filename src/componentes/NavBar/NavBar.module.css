@@ -8,7 +8,7 @@
     align-items: center;
     width: 100%;
     box-sizing: border-box;
-    padding: clamp(5px, 1vw, 10px) clamp(20px, 5vw, 80px);
+    padding: clamp(8px, 1vw, 12px) var(--page-padding);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.04);
     position: absolute; /* Mantém a navegação acessível no topo */
     top: 0; 
@@ -111,7 +111,7 @@
         top: 0;
         right: -100%; /* Escondido para fora da tela */
         width: 100%;
-        max-width: 320px; 
+        max-width: 300px; 
         height: 100vh;
         background-color: #FFFFFF;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.08);
@@ -120,7 +120,7 @@
         align-items: center;
         gap: 28px;
         z-index: 1005;
-        padding: 40px;
+        padding: 40px 24px;
     }
 
     .MenuOpen {

@@ -1,13 +1,12 @@
 .hero {
   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
-  padding: clamp(3rem, 5vw, 5rem) 1rem;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: clamp(620px, 88vh, 820px);
   display: flex;
   align-items: center;
-  padding: clamp(120px, 12vw, 160px) 2rem 4rem 2rem;
+  padding: clamp(96px, 11vw, 136px) var(--page-padding) clamp(3rem, 7vw, 5rem);
 }
 
 
@@ -49,13 +48,13 @@
 }
 
 .containerHeader {
-  max-width: 1200px;
+  max-width: var(--page-max);
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
   align-items: center;
-  gap: 5rem;
+  gap: var(--section-gap);
   position: relative;
   z-index: 3;
 }
@@ -65,7 +64,7 @@
 ========================== */
 
 .content {
-  max-width: 540px;
+  max-width: 560px;
 }
 
 .titleHeader {
@@ -74,7 +73,7 @@
   font-weight: 700;
   line-height: 1.1;
   color: #000;
-  margin-bottom: 2rem;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
 
   /* impede quebras automáticas */
   word-break: keep-all;
@@ -89,10 +88,10 @@
 
 .descriptionHeader {
   color: #153376;
-  font-size: 1.1rem;
-  line-height: 1.4;
-  max-width: 450px;
-  margin-bottom: 2rem;
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: clamp(1.25rem, 3vw, 2rem);
 }
 
 /* ==========================
@@ -163,11 +162,11 @@
 
   .hero {
     min-height: auto;
-    padding: 5rem 1rem;
+    padding: 6rem var(--page-padding) 3.5rem;
   }
 
   .titleHeader {
-    font-size: 2rem;
+    font-size: clamp(2rem, 9vw, 2.6rem);
   }
 
   .descriptionHeader {
