@@ -117,7 +117,8 @@
 }
 
 .social-link:nth-child(3):hover {
-  color: #e4405f;
+ /* filter: drop-shadow(0 0 8px rgba(214, 41, 118, 0.4)); */
+  color: #d62976;
 }
 
 .social-link:last-child:hover {
