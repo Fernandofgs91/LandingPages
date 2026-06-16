@@ -1,5 +1,5 @@
 Markdown
-# 🚀 Landing Pages - Sistema de Captura e Apresentação Profissional
+# 🚀 Landing Pages de Engenharia e Consultoria. Transformamos ideias em soluções eficientes, oferecendo serviços de engenharia civil com qualidade, confiança e compromisso em cada etapa do seu projeto.
 
 Uma aplicação moderna e de alta conversão estruturada em componentes modulares e reutilizáveis, projetada para a criação dinâmica de Landing Pages responsivas e de alta performance.
 
@@ -56,32 +56,42 @@ ImagemTexto: Layouts alternados de blocos de conteúdo e imagens com alta flexib
 TituloSubtitulo: Padronização de cabeçalhos de seções de forma semântica.
 
 ⚙️ Scripts Disponíveis
-No diretório do projeto, podes executar:
 
-npm run dev
-Executa o aplicativo em modo de desenvolvimento com suporte a acesso via rede local (--host), ideal para testes simultâneos em smartphones e desktops.
+No diretório do projeto, você pode executar os seguintes comandos:
 
-Abre http://localhost:5173 para visualizar no navegador.
+▶️ npm run dev 
 
-npm run build
-Compila o aplicativo otimizado para produção na pasta dist. O build é minificado e os assets são gerados com hashes corretos para cache.
+Executa o aplicativo em modo de desenvolvimento com suporte a acesso pela rede local, permitindo testar simultaneamente em smartphones, tablets e desktops.
 
-npm run lint
-Executa o ESLint para analisar o código e apontar inconsistências ou quebras de boas práticas pré-configuradas.
+Abra o navegador em:
 
-npm run deploy
-Realiza o processo automatizado de deploy do build de produção para o GitHub Pages.
+http://localhost:5173
+📦 npm run build
+
+Gera a versão otimizada para produção na pasta dist.
+
+Código minificado;
+Assets com hashes para melhor cache;
+Pronto para publicação.
+🔍 npm run lint
+
+Executa o ESLint para analisar o código e identificar:
+
+Inconsistências;
+Possíveis erros;
+Violações das boas práticas configuradas no projeto.
+🚀 npm run deploy
+
+Realiza automaticamente o deploy da aplicação em produção para o GitHub Pages.
 
 🚀 Como Executar o Projeto Localmente
-Clone o repositório:
-
-Bash
-git clone [https://github.com/Fernandofgs91/LandingPages.git](https://github.com/Fernandofgs91/LandingPages.git)
-Instale as dependências:
-
-Bash
+1️⃣ Clone o repositório
+git clone https://github.com/Fernandofgs91/LandingPages.git
+2️⃣ Acesse a pasta do projeto
+cd LandingPages
+3️⃣ Instale as dependências
 npm install
-Inicie o servidor de desenvolvimento:
-
-Bash
-npm run dev
+4️⃣ Inicie o servidor de desenvolvimento
+npm run dev -- --host
+🌐 Acesse a aplicação
+http://localhost:5173
