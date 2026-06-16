@@ -73,7 +73,7 @@
   font-weight: 700;
   line-height: 1.1;
   color: #000;
-  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  margin-bottom: 2rem;  
 
   /* impede quebras automáticas */
   word-break: keep-all;
@@ -89,9 +89,9 @@
 .descriptionHeader {
   color: #153376;
   font-size: clamp(1rem, 1.4vw, 1.1rem);
-  line-height: 1.6;
-  max-width: 520px;
-  margin-bottom: clamp(1.25rem, 3vw, 2rem);
+  line-height: 1.3; 
+  max-width: 450px; 
+  margin-bottom: 2rem;
 }
 
 /* ==========================
@@ -113,21 +113,31 @@
 }
 
 /* ==========================
-   RESPONSIVO
+   TABLETS
 ========================== */
-
 @media (max-width: 992px) {
+
+  .hero {
+    min-height: auto;
+    padding:
+      clamp(80px, 12vw, 110px)
+      var(--page-padding)
+      clamp(3rem, 6vw, 4rem);
+  }
 
   .containerHeader {
     grid-template-columns: 1fr;
+    gap: 3rem;
     text-align: center;
   }
 
   .content {
-    margin: auto;
+    max-width: 700px;
+    margin: 0 auto;
   }
 
   .descriptionHeader {
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     color: #000308f6;
@@ -135,22 +145,51 @@
 
   .compromissoImageWrapper {
     justify-content: center;
-    padding: 0 2rem 2rem;
+    padding: 0;
   }
 
   .compromissoImg {
-    max-width: 80%;
+    max-width: 75%;
   }
 
-  .triangulo {
-    width: 100%;
-    height: 40%;
-    bottom: 0;
-    top: auto;
+  .image {
+    max-width: 90%;
+  }
+}
 
-    clip-path: polygon(0 100%,
-        100% 0,
-        100% 100%);
+
+/* ==========================
+   CELULARES
+========================== */
+@media (max-width: 768px) {
+
+  .hero {
+    padding:
+      clamp(90px, 18vw, 110px)
+      1.25rem
+      3rem;
+  }
+
+  .containerHeader {
+    gap: 2rem;
+  }
+
+  .titleHeader {
+    font-size: clamp(1.8rem, 7vw, 2.3rem);
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+  }
+
+  .descriptionHeader {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.75rem;
+    max-width: 100%;
+  }
+
+  .compromissoImg {
+    max-width: 85%;
+    border-width: 6px;
   }
 
   .image {
@@ -158,36 +197,29 @@
   }
 }
 
-@media (max-width: 768px) {
+
+/* ==========================
+   CELULARES PEQUENOS
+========================== */
+@media (max-width: 480px) {
 
   .hero {
-    min-height: auto;
-    padding: 6rem var(--page-padding) 3.5rem;
+    padding:
+      85px
+      1rem
+      2.5rem;
   }
 
   .titleHeader {
-    font-size: clamp(2rem, 9vw, 2.6rem);
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 
   .descriptionHeader {
     font-size: .95rem;
   }
-}
 
-@media (max-width: 992px) {
-  /* ... suas outras regras do media query continuam iguais ... */
-
-  .compromissoImageWrapper {
-    justify-content: center;
-    padding: 0 2rem 2rem;
+  .compromissoImg {
+    max-width: 100%;
+    border-width: 4px;
   }
 }
-
-/* @media (max-width: 768px) {
-  .hero :before {
-       background-image: linear-gradient(to bottom,
-        rgba(255, 255, 255, 0.92) 0%,
-        rgba(255, 255, 255, 0.6) 60%,
-        rgba(255, 255, 255, 0) 100%), url('../../assets/header/planodefundoheader1.jpg');
-  }
-} */

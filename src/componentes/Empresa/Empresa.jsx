@@ -3,19 +3,19 @@ import styles from "./Empresa.module.css";
 
 const diferenciais = [
   {
-    titulo: "Execução de Obras:",
+    titulo: "Execução de Obras",
     descricao: "Públicas e privadas, com gestão rigorosa e qualidade atestada."
   },
   {
-    titulo: "Consultoria e Fiscalização:",
+    titulo: "Consultoria e Fiscalização",
     descricao: "Garantia de normas técnicas e economia para o seu investimento."
   },
   {
-    titulo: "Projetos Especializados:",
+    titulo: "Projetos Especializados",
     descricao: "Arquitetônico, Hidrossanitário, e Prevenção/Combate a Incêndio."
   },
   {
-    titulo: "Regularização Imobiliária:",
+    titulo: "Regularização Imobiliária",
     descricao: "Processos completos, emissão e renovação de AVCB."
   }
 ];
