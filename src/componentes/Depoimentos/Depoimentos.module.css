@@ -9,21 +9,19 @@
   overflow-x: hidden;
 }
 
-/* Imagem de fundo usando pseudo-elemento - NÃO SOME MAIS */
 .depoimentos::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('../../assets/Depoimentos/fotofundodepoimento.jpeg');
+  inset: 0;
+  background-image: url("../../assets/Depoimentos/fotofundodepoimento.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  opacity: 0.3; /* Ajuste a transparência aqui */
+  /* opacity: 0.3; */
   z-index: 0;
-  pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
+  pointer-events: none;
+
+  animation: backgroundReveal 1.8s cubic-bezier(.22,1,.36,1) forwards;
 }
 
 .containerDepoimentos {
@@ -40,15 +38,23 @@
 
 .header {
   text-align: center;
-  margin-bottom: clamp(2rem, 4vw, 3rem); 
+  margin-bottom: clamp(2rem, 4vw, 3rem);
+
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeUp .9s ease forwards;
 }
 
 .titleDepoimentos {
-  font-size: clamp(1.8rem, 4vw, 2.5rem); 
-  font-weight: 700; 
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
   color: #605151;
   margin-bottom: 0.75rem;
   line-height: 1.2;
+
+  opacity: 0;
+  animation: fadeTitle .9s ease forwards;
+  animation-delay: .2s;
 }
 
 .subtitleDepoimentos {
@@ -57,6 +63,19 @@
   max-width: 600px;
   margin: 0 auto;
   line-height: 1.6;
+}
+
+.titleDepoimentos {
+  animation: fadeTitle .9s ease forwards;
+  animation-delay: .2s;
+}
+
+.subtitleDepoimentos {
+  opacity: 0;
+  transform: translateY(25px);
+
+  animation: fadeUp .8s ease forwards;
+  animation-delay: .4s;
 }
 
 .subtitle strong {
@@ -72,8 +91,13 @@
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
-}
 
+  opacity: 0;
+  transform: translateY(40px);
+
+  animation: fadeUp .9s ease forwards;
+  animation-delay: .8s;
+}
 /* ==========================================
    CARD DEPOIMENTO
 ========================================== */
@@ -105,10 +129,20 @@
   position: relative;
   
   /* Transição e Alinhamento */
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+  transform .5s cubic-bezier(.22,1,.36,1),
+  box-shadow .5s ease,
+  border-color .5s ease;
   align-items: center;
   text-align: center;
 }
+
+.slide:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+  border-color: rgba(4, 22, 141, 0.8);
+}
+
 /* ==========================================
    ASPAS DECORATIVAS
 ========================================== */
@@ -328,7 +362,7 @@
 
 @media (max-width: 768px) {
   .slide {
-    border-radius: var(--card-radius);
+    border-radius: 20px;
   }
 
   .navButton {
@@ -392,5 +426,47 @@
   .navButton {
     width: 36px;
     height: 36px;
+  }
+}
+
+/* ==========================================
+   ANIMAÇÕES
+========================================== */
+
+@keyframes backgroundReveal {
+  from {
+    opacity: 0;
+    transform: scale(1.1);
+  }
+
+  to {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeTitle {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
   }
 }
