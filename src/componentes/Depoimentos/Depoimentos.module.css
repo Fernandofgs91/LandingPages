@@ -40,9 +40,7 @@
   text-align: center;
   margin-bottom: clamp(2rem, 4vw, 3rem);
 
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeUp .9s ease forwards;
+  animation: fadeUp .9s ease;
 }
 
 .titleDepoimentos {
@@ -52,9 +50,7 @@
   margin-bottom: 0.75rem;
   line-height: 1.2;
 
-  opacity: 0;
-  animation: fadeTitle .9s ease forwards;
-  animation-delay: .2s;
+  animation: fadeTitle .9s ease;
 }
 
 .subtitleDepoimentos {
@@ -71,13 +67,14 @@
 }
 
 .subtitleDepoimentos {
-  opacity: 0;
-  transform: translateY(25px);
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  color: #605151;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
 
-  animation: fadeUp .8s ease forwards;
-  animation-delay: .4s;
+  animation: fadeUp 1.2s ease;
 }
-
 .subtitle strong {
   color: #1e40af;
 }
@@ -91,50 +88,40 @@
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
-
-  opacity: 0;
-  transform: translateY(40px);
-
-  animation: fadeUp .9s ease forwards;
-  animation-delay: .8s;
 }
 /* ==========================================
    CARD DEPOIMENTO
 ========================================== */
 
 .slide {
-  /* Efeito Glassmorphism (Visual iOS) */
-  background: rgba(255, 255, 255, 0.4); 
+  background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
-  
-  /* Borda sutil para o efeito de vidro */
-  border: 1px solid rgba(4, 22, 141, 0.564); 
-  border-radius: 24px; 
-  
-  /* Layout e Espaçamento */
+  border: 1px solid rgba(4, 22, 141, 0.564);
+  border-radius: 24px;
+
   padding: var(--card-padding);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  
-  /* Sombra suave */
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
-  
-  /* Dimensões e Posicionamento */
+
+  box-shadow: 0 10px 30px rgba(0,0,0,.1);
+
   width: 100%;
   max-width: 340px;
   min-height: 390px;
   margin: 0 auto;
   position: relative;
-  
-  /* Transição e Alinhamento */
-  transition:
-  transform .5s cubic-bezier(.22,1,.36,1),
-  box-shadow .5s ease,
-  border-color .5s ease;
+
   align-items: center;
   text-align: center;
+
+  animation: cardReveal .8s ease;
+
+  transition:
+    transform .5s cubic-bezier(.22,1,.36,1),
+    box-shadow .5s ease,
+    border-color .5s ease;
 }
 
 .slide:hover {
@@ -151,12 +138,14 @@
   font-size: clamp(3rem, 8vw, 5rem);
   font-family: Georgia, serif;
   color: #1e40af;
-  opacity: 0.12;
+  opacity: .12;
   position: absolute;
   top: 1rem;
   left: 1rem;
   line-height: 1;
   pointer-events: none;
+
+  animation: floatQuote 4s ease-in-out infinite;
 }
 
 /* ==========================================
@@ -440,7 +429,7 @@
   }
 
   to {
-    opacity: 0.3;
+    opacity: .3;
     transform: scale(1);
   }
 }
@@ -460,13 +449,35 @@
 @keyframes fadeTitle {
   from {
     opacity: 0;
-    transform: translateY(50px);
-    filter: blur(10px);
+    transform: translateY(60px);
+    filter: blur(12px);
   }
 
   to {
     opacity: 1;
     transform: translateY(0);
     filter: blur(0);
+  }
+}
+
+@keyframes cardReveal {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatQuote {
+  0%,100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
   }
 }
