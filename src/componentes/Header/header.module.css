@@ -144,7 +144,7 @@
   .containerHeader {
     grid-template-columns: 1fr;
     gap: 3rem;
-    text-align: center;
+    text-align: left;
   }
 
   .content {
@@ -155,12 +155,13 @@
   .descriptionHeader {
     max-width: 600px;
     margin-left: auto;
+    font-weight: 700;
     margin-right: auto;
-    color: #000308f6;
+    color: #153376;
   }
 
   .compromissoImageWrapper {
-    justify-content: center;
+    justify-content: left; 
     padding: 0;
   }
 
@@ -225,7 +226,7 @@
   }
 
   .titleHeader {
-    font-size: clamp(1.8rem, 8vw, 2.2rem);
+    font-size: clamp(1.8rem, 8vw, 2.2rem); 
   }
 
   .descriptionHeader {
