@@ -31,7 +31,7 @@
     text-align: center;
 }
 
-/* Tablets (até 1024px) */
+/* Responsivo */
 @media (max-width: 1024px) {
     .containerBoxes {
         flex-direction: column;
@@ -44,7 +44,6 @@
     }
 }
 
-/* Celulares (até 600px) */
 @media (max-width: 600px) {
     .containerBoxes {
         flex-direction: column;

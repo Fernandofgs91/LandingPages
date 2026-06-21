@@ -1,7 +1,3 @@
-/* ==========================================
-   SEÇÃO DE DEPOIMENTOS
-========================================== */
-
 .depoimentos {
   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -17,7 +13,6 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  /* opacity: 0.3; */
   z-index: 0;
   pointer-events: none;
 
@@ -29,12 +24,9 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  z-index: 1; /* Garante que o conteúdo fique sobre a imagem */
+  z-index: 1; 
 }
 
-/* ==========================================
-   CABEÇALHO
-========================================== */
 
 .header {
   text-align: center;
@@ -79,19 +71,13 @@
   color: #1e40af;
 }
 
-/* ==========================================
-   SWIPER
-========================================== */
-
 .swiperContainer {
   padding: 1rem 0.25rem;
   margin-bottom: 2rem;
   position: relative;
   z-index: 1;
 }
-/* ==========================================
-   CARD DEPOIMENTO
-========================================== */
+
 
 .slide {
   background: rgba(255, 255, 255, 0.4);
@@ -130,10 +116,6 @@
   border-color: rgba(4, 22, 141, 0.8);
 }
 
-/* ==========================================
-   ASPAS DECORATIVAS
-========================================== */
-
 .quoteIcon {
   font-size: clamp(3rem, 8vw, 5rem);
   font-family: Georgia, serif;
@@ -147,10 +129,6 @@
 
   animation: floatQuote 4s ease-in-out infinite;
 }
-
-/* ==========================================
-   AVATAR
-========================================== */
 
 .avatarContainer {
   display: flex;
@@ -168,9 +146,6 @@
   background: #f0f4f9;
 }
 
-/* ==========================================
-   CONTEÚDO
-========================================== */
 
 .content {
   position: relative;
@@ -243,9 +218,7 @@
   max-width: 100%;
 }
 
-/* ==========================================
-   BOTÕES DE NAVEGAÇÃO
-========================================== */
+/* Botões de navegação */
 
 .navButtons {
   display: flex;
@@ -281,9 +254,7 @@
   transform: scale(1.05);
 }
 
-/* ==========================================
-   PAGINAÇÃO
-========================================== */
+/* Paginação */
 
 .swiperPagination {
   display: flex;
@@ -311,9 +282,6 @@
   background: #1e40af;
 }
 
-/* ==========================================
-   SELO DE CONFIANÇA
-========================================== */
 
 .selo {
   background: rgba(255, 255, 255, 0.95);
@@ -345,9 +313,7 @@
   color: #1e40af;
 }
 
-/* ==========================================
-   TABLET
-========================================== */
+/* Responsividade */
 
 @media (max-width: 768px) {
   .slide {
@@ -366,10 +332,6 @@
     padding: 1rem;
   }
 }
-
-/* ==========================================
-   CELULAR
-========================================== */
 
 @media (max-width: 576px) {
   .depoimentos {
@@ -395,10 +357,6 @@
   }
 }
 
-/* ==========================================
-   CELULAR PEQUENO
-========================================== */
-
 @media (max-width: 380px) {
   .slide {
     padding: 1rem;
@@ -418,9 +376,7 @@
   }
 }
 
-/* ==========================================
-   ANIMAÇÕES
-========================================== */
+/* Animações */
 
 @keyframes backgroundReveal {
   from {

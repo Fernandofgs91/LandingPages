@@ -31,7 +31,7 @@ const Contato = () => {
       <div className={styles.overlay}></div>
 
       <div className={styles.content}>
-        {/* Coluna da Esquerda */}
+ 
         <div className={styles.leftColumn}>
           <h1 className={styles.titleContato}>
             Seu projeto sem surpresas nem
@@ -48,10 +48,10 @@ const Contato = () => {
           </p>
         </div>
 
-        {/* Coluna da Direita */}
+    
         <div className={styles.rightColumn}>
           <form ref={form} className={styles.form} onSubmit={sendEmail}>
-            {/* Nome */}
+      
             <div className={styles.formGroup}>
               <label htmlFor="nome" className={styles.label}>
                 Nome completo *
@@ -67,7 +67,7 @@ const Contato = () => {
               />
             </div>
 
-            {/* Email */}
+
             <div className={styles.formGroup}>
               <label htmlFor="email" className={styles.label}>
                 Email *
@@ -82,7 +82,7 @@ const Contato = () => {
                 required
               />
             </div>
-            {/* WhatsApp */}
+
             <div className={styles.formGroup}>
               <label htmlFor="whatsapp" className={styles.label}>
                 WhatsApp (com DDD) *
@@ -98,7 +98,7 @@ const Contato = () => {
               />
             </div>
 
-            {/* Tipo de Projeto */}
+   
             <div className={styles.formGroup}>
               <label htmlFor="projeto" className={styles.label}>
                 Tipo de projeto *
@@ -125,7 +125,7 @@ const Contato = () => {
               </select>
             </div>
 
-            {/* Mensagem */}
+
             <div className={styles.formGroup}>
               <label htmlFor="mensagem" className={styles.label}>
                 Descreva seu projeto *
@@ -141,7 +141,7 @@ const Contato = () => {
               />
             </div>
 
-            {/* Botão */}
+
             <div className={styles.buttonContainer}>
               <button type="submit" className={styles.button}>
                 <span>🚀</span>

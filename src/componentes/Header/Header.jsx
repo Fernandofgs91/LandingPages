@@ -14,7 +14,9 @@ const Header = () => {
             <br />
             <strong>E RESPONSABILIDADE</strong>
             <br />
-            COM OS SEUS <span className={styles.highlight}>SONHOS</span>
+            COM OS SEUS 
+            <br/>
+            <span className={styles.highlight}>SONHOS</span>
           </h1>
 
           <p className={styles.descriptionHeader}>

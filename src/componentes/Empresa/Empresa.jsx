@@ -44,23 +44,12 @@ function Empresa() {
              a concepção até a regularização final..
           </p>
 
-          {/* Opcional: Bloco de métricas caso queira usar no futuro, se não, pode apagar */}
-          {/* <div className={styles.metricas}>
-            <div>
-              <strong>+100</strong>
-              <span>Projetos Entregues</span>
-            </div>
-            <div>
-              <strong>100%</strong>
-              <span>Segurança Legal</span>
-            </div>
-            
-          </div> */}
+
 
         </div>
       </div>
 
-      {/* Grid de Cards utilizando a array corretamente */}
+    
       <div className={styles.cards}>
         {diferenciais.map((item) => (
           <div className={styles.card} key={item.titulo}>

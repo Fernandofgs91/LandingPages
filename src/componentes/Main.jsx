@@ -3,7 +3,6 @@ import Contato from "./Contato/Contato";
 import FAQ from "./FAQ/FAQ";
 import Header from "./Header/Header";
 import Empresa from "./Empresa/Empresa";
-// import Wpp from "./Wpp/Wpp";
 import Sobre from "./Sobre/Sobre";
 import Footer from "./Footer/Footer";
 import Beneficios from "./Benefícios/Beneficios";
@@ -18,7 +17,6 @@ function Main() {
             <Depoimentos/>
             <FAQ/>
             <Contato/>
-            {/* <Wpp/> */}
             <Footer/>
         </main>
     );

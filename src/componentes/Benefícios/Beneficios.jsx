@@ -41,7 +41,7 @@ const Beneficios = () => {
     <section id="beneficios" className={styles.beneficios}>
       <div className={styles.containerBeneficios}>
         
-        {/* Cabeçalho */}
+
         <div className={styles.header}>
           <h2 className={styles.titleBeneficios}>
             Por que contratar a <span className={styles.highlight}>Office Engenharia</span>?
@@ -51,7 +51,7 @@ const Beneficios = () => {
           </p>
         </div>
 
-        {/* Destaque - Projetos otimizados */}
+  
         <div className={styles.destaque}>
           <div className={styles.destaqueIcon}>
             <FaCheckCircle />
@@ -61,7 +61,7 @@ const Beneficios = () => {
           </p>
         </div>
 
-        {/* Grid de Benefícios */}
+
         <div className={styles.grid}>
           {beneficios.map((beneficio) => (
             <div key={beneficio.id} className={styles.card}>

@@ -9,9 +9,7 @@
   padding: clamp(96px, 11vw, 136px) var(--page-padding) clamp(3rem, 7vw, 5rem);
 }
 
-/* ==========================
-   IMAGEM DE FUNDO
-========================== */
+/* Imagem de fundo */
 
 .hero::before {
   content: "";
@@ -33,20 +31,17 @@
   max-width: var(--page-max);
   width: 100%;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
   align-items: center;
   gap: var(--section-gap);
   position: relative;
   z-index: 3;
 }
 
-/* ==========================
-   TEXTO
-========================== */
+/* Textos da seção */
 
 .content {
-  max-width: 560px;
+  max-width: 800px; 
 }
 
 .titleHeader {
@@ -90,12 +85,11 @@
 .ctaWrapper {
   opacity: 0;
   transform: translateY(50px) scale(.9);
+
   animation: buttonReveal .8s cubic-bezier(.22, 1, .36, 1) forwards;
   animation-delay: 1.5s;
 }
-/* ==========================
-   IMAGEM LATERAL
-========================== */
+/* Imagem lateral */
 
 .compromissoImageWrapper {
   flex: 1;
@@ -127,9 +121,7 @@
     0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
-/* ==========================
-   TABLETS
-========================== */
+/* Responsividade de tablets */
 
 @media (max-width: 992px) {
   .hero {
@@ -143,7 +135,7 @@
   .containerHeader {
     grid-template-columns: 1fr;
     gap: 3rem;
-    text-align: left;
+    text-align: center;
   }
 
   .content {
@@ -154,13 +146,14 @@
   .descriptionHeader {
     max-width: 600px;
     margin-left: auto;
-    font-weight: 700;
     margin-right: auto;
     color: #153376;
+    font-weight: 700;
+;
   }
 
   .compromissoImageWrapper {
-    justify-content: left; 
+    justify-content: center;
     padding: 0;
   }
 
@@ -173,9 +166,7 @@
   }
 }
 
-/* ==========================
-   CELULARES
-========================== */
+/* Responsividade de celulares */
 
 @media (max-width: 768px) {
   .hero {
@@ -212,10 +203,6 @@
   }
 }
 
-/* ==========================
-   CELULARES PEQUENOS
-========================== */
-
 @media (max-width: 480px) {
   .hero {
     padding:
@@ -225,7 +212,7 @@
   }
 
   .titleHeader {
-    font-size: clamp(1.8rem, 8vw, 2.2rem); 
+    font-size: clamp(1.8rem, 8vw, 2.2rem);
   }
 
   .descriptionHeader {
@@ -238,9 +225,7 @@
   }
 }
 
-/* ==========================
-   ANIMAÇÕES
-========================== */
+/* Animações */
 @keyframes backgroundReveal {
   from {
     opacity: 0;

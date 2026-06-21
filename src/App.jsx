@@ -9,7 +9,7 @@ function App() {
       <BrowserRouter>
         <NavBar/>
         <Main/>
-        {/* 💡 Deixe ele aqui, solto na raiz do projeto */}
+       
       <Wpp />
       </BrowserRouter>
     </>

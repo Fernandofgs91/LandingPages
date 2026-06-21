@@ -1,10 +1,9 @@
-// Depoimentos.jsx
 import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import CTA from '../CTA/CTA';
 
-// Importando os estilos do Swiper
+// Estilos do swiper
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -14,10 +13,9 @@ import FotoFundo from "../../assets/Depoimentos/fotofundodepoimento.jpeg";
 const Depoimentos = () => {
   const url = "https://raw.githubusercontent.com/Fernandofgs91/PFEJ/refs/heads/main/LandingPages/Json/clientes.json";
   
-  // 1. Inicializado como um array vazio para controlar o estado de carregamento
+
   const [depoimentos, setDepoimentos] = useState([]);
 
-  // 2. useEffect para disparar a busca assim que o componente montar na tela
   useEffect(() => {
     lerDepoimentos();
   }, []);
@@ -28,13 +26,13 @@ const Depoimentos = () => {
       const dadosServidor = await response.json();
       const clientes = [...(dadosServidor.clientes || [])];
 
-      // Mantendo a sua regra de negócio: Embaralha os depoimentos (Algoritmo Fisher-Yates)
+      // embaralha os depoimentos 
       for (let i = clientes.length - 1; i > 0; i -= 1) {
         const j = Math.floor(Math.random() * (i + 1));
         [clientes[i], clientes[j]] = [clientes[j], clientes[i]];
       }
 
-      // Salva no estado apenas os 6 primeiros depoimentos embaralhados
+      // Salva apenas os 6 primeiros depoimentos 
       setDepoimentos(clientes.slice(0, 6));
     } catch (error) {
       console.error("Erro ao buscar dados dos depoimentos:", error);
@@ -88,7 +86,7 @@ const Depoimentos = () => {
           </p>
         </div>
 
-        {/* 3. Condicional controlando o estado de Carregamento vs Swiper preenchido */}
+  
         {depoimentos.length === 0 ? (
           <p style={{ textAlign: 'center', color: '#fff' }}>Carregando depoimentos...</p>
         ) : (
@@ -153,7 +151,6 @@ const Depoimentos = () => {
           </Swiper>
         )}
 
-        {/* Botões de navegação customizados */}
         {depoimentos.length > 0 && (
           <div className={styles.navButtons}>
             <button className={`${styles.navButton} ${styles.swiperPrev}`} aria-label="Anterior">
@@ -165,7 +162,6 @@ const Depoimentos = () => {
           </div>
         )}
 
-        {/* Paginação customizada */}
         <div className={styles.swiperPagination}></div>
 
       </div>

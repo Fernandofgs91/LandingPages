@@ -1,10 +1,10 @@
 .texto {
-  width: fit-content; /* largura mínima para o conteúdo */
+  width: fit-content; 
 
-  display: flex;  /* alinha o texto e o ícone horizontalmente */
-  align-items: center; /* centraliza verticalmente o conteúdo */  
+  display: flex;  
+  align-items: center; 
   justify-content: center;
-  gap: 10px;  /* espaço entre o texto e o ícone */
+  gap: 10px;  
 
   text-decoration: none;
   color: #ffffff;
@@ -41,7 +41,6 @@
   overflow: hidden;
 }
 
-/* brilho moderno */
 .texto::before {
   content: "";
 
@@ -85,9 +84,7 @@
   align-items: center;
 }
 
-/* =========================
-   RESPONSIVO
-========================= */
+/* Responsividade */
 
 @media (max-width: 768px ) {
   .texto {

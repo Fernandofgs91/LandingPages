@@ -5,7 +5,6 @@
   overflow-x: hidden;
 }
 
-/* Imagem de fundo usando pseudo-elemento - NÃO SOME MAIS */
 .sobre::before {
   content: '';
   position: absolute;
@@ -17,9 +16,9 @@
   background-size: cover; 
   background-position: center;
   background-repeat: no-repeat; 
-  opacity: 0.3; /* Ajuste a transparência aqui */
+  opacity: 0.3; 
   z-index: 0;
-  pointer-events: none; /* ESSENCIAL: permite clicar através da imagem */
+  pointer-events: none; 
 }
 
 .containerSobre {
@@ -53,9 +52,7 @@
   line-height: 1.7;
 }
 
-/* ===========================
-   TIMELINE
-=========================== */
+/*Timeline */
 
 .timeline {
   display: flex;
@@ -80,32 +77,26 @@
 }
 
 .card {
-  /* Efeito Glassmorphism (Visual iOS) */
+
   background: rgba(255, 255, 255, 0.4); 
   backdrop-filter: blur(20px) saturate(180%);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   
-  /* Borda sutil para o efeito de vidro */
   border: 0.2px solid rgba(9, 26, 208, 0.578); 
    border-radius: 20px; 
   
-  /* Layout e Espaçamento */
-  padding: 55px 20px 20px;
+   padding: 55px 20px 20px;
   box-sizing: border-box; 
   display: flex; 
   flex-direction: column;
   
-  /* Sombra suave */
-  /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  */
-  
-  /* Dimensões e Posicionamento */
   width: 100%;
   max-width: 260px; 
   min-height: 185px;
   margin: 0 auto;
   position: relative;
   
-  /* Transição e Alinhamento */
+  /* Transição */
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   align-items: center;
   text-align: center;
@@ -119,9 +110,7 @@
   border: 3px solid #1e90ff;
 }
 
-/* ===========================
-   NUMERAÇÃO
-=========================== */
+/* Numeração */
 
 .numero {
   width: 68px;
@@ -158,9 +147,7 @@
   background: #4d7d3f;
 }
 
-/* ===========================
-   ÍCONES
-=========================== */
+/* Icones */
 
 .icone {
   font-size: 2.3rem;
@@ -182,10 +169,7 @@
   font-size: 1rem;
 }
 
-/* ===========================
-   RESPONSIVIDADE
-=========================== */
-
+/* Responsividade */
 @media (max-width: 1100px) {
   .timeline {
     flex-wrap: wrap;

@@ -10,24 +10,22 @@
     color: #605151;
 }
 
-/* Tablets (até 1024px) */
 @media (max-width: 1024px) {
     .titulo {
-        font-size: 2rem; /* Aproximadamente 32px */
+        font-size: 2rem; 
     }
 
     .subtitulo {
-        font-size: 1.2rem; /* Aproximadamente 19px */
+        font-size: 1.2rem; 
     }
 }
 
-/* Celulares (até 600px) */
 @media (max-width: 600px) {
     .titulo {
-        font-size: 2rem; /* Aproximadamente 27px */
+        font-size: 2rem; 
     }
 
     .subtitulo {
-        font-size: 1.3rem; /* Aproximadamente 16px */
+        font-size: 1.3rem; 
     }
 }

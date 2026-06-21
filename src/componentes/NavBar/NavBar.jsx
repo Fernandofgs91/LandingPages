@@ -9,12 +9,10 @@ function NavBar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Fecha o menu automaticamente quando o usuário clica em um link do menu móvel
   const handleLinkClick = () => {
     setIsMenuOpen(false);
   };
 
-  // Trava o scroll da página de fundo quando o menu hambúrguer estiver aberto (Mobile UX)
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -30,7 +28,6 @@ function NavBar() {
         <img src={LogoOffice} alt="Logo da Empresa Office" className={styles.LogoOffice} />
       </div>
 
-      {/* Botão de Menu Hambúrguer - Acessibilidade Completa */}
       <button 
         className={`${styles.Hamburger} ${isMenuOpen ? styles.HamburgerActive : ''}`} 
         onClick={toggleMenu}
@@ -43,7 +40,6 @@ function NavBar() {
         <span className={styles.Bar}></span>
       </button>
 
-      {/* Menu de Links */}
       <div 
         id="main-menu"
         className={`${styles.Menu} ${isMenuOpen ? styles.MenuOpen : ''}`}

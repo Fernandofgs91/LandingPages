@@ -1,14 +1,9 @@
-/* ==========================================
-   SEÇÃO DE FAQ - RESPONSIVO
-========================================== */
-
 .faq {
   background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
   position: relative;
   font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Imagem de fundo opcional */
 .faq::before {
   content: '';
   position: absolute;
@@ -30,14 +25,11 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
-  /* border-radius: 24px;  */
   z-index: 1;
   padding: 0;
 }
 
-/* ==========================================
-   CABEÇALHO
-========================================== */
+/* Cabeçalho */
 
 .header {
   text-align: center;
@@ -63,12 +55,7 @@
   padding: 0;
 }
 
-/* ==========================================
-   GRID FAQ - RESPONSIVIDADE
-   - Desktop: 2 colunas
-   - Tablet: 2 colunas
-   - Smartphone: 1 coluna
-========================================== */
+/* Responsividade */
 
 .grid {
   display: grid;
@@ -79,14 +66,12 @@
   padding: 0;
 }
 
-/* Desktop (1025px e acima) - 2 colunas */
 @media (min-width: 1025px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Tablet (768px a 1024px) - 2 colunas */
 @media (min-width: 768px) and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -94,7 +79,6 @@
   }
 }
 
-/* Smartphone (até 767px) - 1 coluna */
 @media (max-width: 767px) {
   .grid {
     grid-template-columns: 1fr;
@@ -102,7 +86,6 @@
   }
 }
 
-/* Smartphone pequeno (até 480px) - 1 coluna */
 @media (max-width: 480px) {
   .grid {
     grid-template-columns: 1fr;
@@ -110,9 +93,6 @@
   }
 }
 
-/* ==========================================
-   ITEM FAQ
-========================================== */
 
 .faqItem {
   background: white;
@@ -137,9 +117,7 @@
   transform: translateY(-2px);
 }
 
-/* ==========================================
-   PERGUNTA (BUTTON)
-========================================== */
+/* Botão da pergunta */
 
 .question {
   width: 100%;
@@ -171,7 +149,6 @@
   word-break: break-word;
 }
 
-/* Ícone + / - */
 .icon {
   font-size: clamp(1.25rem, 3vw, 1.5rem);
   font-weight: 600;
@@ -185,10 +162,6 @@
 .faqItem.active .icon {
   transform: rotate(0deg);
 }
-
-/* ==========================================
-   RESPOSTA COM TEXTO JUSTIFICADO
-========================================== */
 
 .answerWrapper {
   max-height: 0;
@@ -219,9 +192,7 @@
   line-height: inherit;
 }
 
-/* ==========================================
-   CTA - RESPONSIVO
-========================================== */
+/* CTA responsivo */
 
 .cta {
   background: linear-gradient(135deg, #1e40af 0%, #1e3a8a 100%);
@@ -253,9 +224,7 @@
   padding: 0 clamp(0.5rem, 2vw, 1rem);
 }
 
-/* ==========================================
-   ANIMAÇÕES
-========================================== */
+/* Animação */
 
 @keyframes fadeIn {
   from {
@@ -268,10 +237,7 @@
   }
 }
 
-/* ==========================================
-   TOQUE PARA DISPOSITIVOS MÓVEIS
-========================================== */
-
+/* Responsividade */
 @media (max-width: 768px) {
   .question {
     cursor: pointer;
@@ -293,9 +259,7 @@
   }
 }
 
-/* ==========================================
-   ACESSIBILIDADE
-========================================== */
+/* Acessibilidade */
 
 .question:focus-visible {
   outline: 2px solid #1e40af;
@@ -303,7 +267,6 @@
   border-radius: 16px;
 }
 
-/* Redução de movimento para usuários que preferem */
 @media (prefers-reduced-motion: reduce) {
   .faqItem,
   .question,
@@ -318,7 +281,6 @@
   }
 }
 
-/* Suporte para navegadores mais antigos */
 @supports not (text-justify: inter-word) {
   .answer,
   .answer p {
@@ -326,7 +288,6 @@
   }
 }
 
-/* Melhoria para telas muito largas */
 @media (min-width: 1600px) {
   .containerFaq {
     max-width: var(--page-max);

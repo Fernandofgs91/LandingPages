@@ -16,7 +16,6 @@
         filter: invert(1);
 }
 
-/* Tablets (até 1024px) */
 @media (max-width: 1024px) {
   .imagemTexto {
     height: 28px;
@@ -33,7 +32,6 @@
   }
 }
 
-/* Celulares (até 600px) */
 @media (max-width: 600px) {
   .imagemTexto {
     height: auto;

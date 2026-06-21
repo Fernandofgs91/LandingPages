@@ -1,4 +1,3 @@
-// FAQ.jsx
 import React, { useState, useEffect } from "react";
 import styles from "./FAQ.module.css";
 import CTA from '../CTA/CTA';
@@ -6,11 +5,9 @@ import CTA from '../CTA/CTA';
 const FAQ = () => {
   const url = "https://raw.githubusercontent.com/Fernandofgs91/PFEJ/refs/heads/main/LandingPages/Json/faqData.json";
 
-  // 1. Inicializado como array vazio para armazenar os dados vindo da URL externa
   const [faqData, setFaqData] = useState([]);
   const [openItems, setOpenItems] = useState([]);
 
-  // 2. useEffect para buscar as perguntas assim que o componente for exibido na tela
   useEffect(() => {
     lerFaqData();
   }, []);
@@ -20,7 +17,6 @@ const FAQ = () => {
       const response = await fetch(url);
       const dadosServidor = await response.json();
       
-      // Validação defensiva: aceita se o JSON for uma lista direta ou um objeto que contém a lista
       const dadosFaq = Array.isArray(dadosServidor)
         ? dadosServidor
         : (dadosServidor.faqs || dadosServidor.faq || []);
@@ -33,11 +29,9 @@ const FAQ = () => {
 
   const toggleItem = (id) => {
     setOpenItems(prev => {
-      // Se o item já está aberto, fecha
       if (prev.includes(id)) {
         return [];
       }
-      // Se está fechado, abre apenas ele (substitui qualquer outro)
       return [id];
     });
   };
@@ -52,13 +46,12 @@ const FAQ = () => {
           </p>
         </div>
 
-        {/* 3. Condicional para alternar entre a mensagem de carregamento e o Grid de perguntas */}
+      
         {faqData.length === 0 ? (
           <p style={{ textAlign: 'center', color: '#666', padding: '20px' }}>Carregando perguntas...</p>
         ) : (
           <div className={styles.grid}>
             {faqData.map((item, index) => {
-              // Garante uma identificação única mesmo se o JSON falhar com o campo id
               const itemId = item.id || index;
               const isOpen = openItems.includes(itemId);
 
