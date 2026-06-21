@@ -90,7 +90,6 @@
 .ctaWrapper {
   opacity: 0;
   transform: translateY(50px) scale(.9);
-
   animation: buttonReveal .8s cubic-bezier(.22, 1, .36, 1) forwards;
   animation-delay: 1.5s;
 }
