@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   padding: clamp(96px, 11vw, 136px) var(--page-padding) clamp(3rem, 7vw, 5rem);
+   margin-top: 20px;
 }
 
 /* Imagem de fundo */
