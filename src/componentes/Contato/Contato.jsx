@@ -36,7 +36,7 @@ const Contato = () => {
             <span> Seu projeto sem surpresas nem </span>
 
             <span className={styles.lineBreak}>
-              desperdício. Receba um diagnóstico
+              desperdício. Receba um diagnóstico &nbsp;
             </span>
 
             <span className={styles.lineBreak}>
