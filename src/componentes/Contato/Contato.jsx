@@ -36,7 +36,7 @@ const Contato = () => {
           <h1 className={styles.titleContato}>
             Seu projeto sem surpresas nem
             <br className={styles.hideOnMobile} />
-            desperdício. Receba um diagnóstico
+            desperdício.<br/> Receba um diagnóstico
             <br className={styles.hideOnMobile} />
             gratuito com um engenheiro.
           </h1>
