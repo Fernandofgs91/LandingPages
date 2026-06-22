@@ -1,12 +1,12 @@
 .texto {
-  width: fit-content; 
+  width: fit-content;  
 
   display: flex;  
   align-items: center; 
   justify-content: center;
   gap: 10px;  
 
-  text-decoration: none;
+  text-decoration: none; 
   color: #ffffff;
 
   background: linear-gradient(
@@ -18,7 +18,7 @@
 
   background-size: 200% 200%;  /* para o efeito de animação */
 
-  padding: 14px 28px;
+  padding: 14px 28px; 
 
   border-radius: 15px; 
 
@@ -35,9 +35,9 @@
 
   transition: all 0.35s ease;
 
-  margin: clamp(1.5rem, 4vw, 2.5rem) auto 0;
+  margin: clamp(1.5rem, 4vw, 2.5rem) auto 0; 
 
-  position: relative;
+  position: relative; 
   overflow: hidden;
 }
 

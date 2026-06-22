@@ -57,7 +57,7 @@
   font-weight: 700;
   line-height: 1.1;
   color: #000;
-  margin-bottom: 0; /* Removido o margin-bottom */
+  margin-bottom: 1rem; /* Removido o margin-bottom */
 
   word-break: keep-all;
   overflow-wrap: normal;
@@ -204,6 +204,7 @@
   }
 
   .descriptionHeader {
+    margin-top: 0.5rem;
     font-size: 1rem;
     line-height: 1.6;
     max-width: 100%;
