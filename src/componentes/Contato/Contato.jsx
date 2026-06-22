@@ -31,27 +31,30 @@ const Contato = () => {
       <div className={styles.overlay}></div>
 
       <div className={styles.content}>
- 
         <div className={styles.leftColumn}>
           <h1 className={styles.titleContato}>
-            Seu projeto sem surpresas nem
-            <br className={styles.hideOnMobile} />
-            desperdício.<br/> Receba um diagnóstico
-            <br className={styles.hideOnMobile} />
-            gratuito com um engenheiro.
+            <span> Seu projeto sem surpresas nem </span>
+
+            <span className={styles.lineBreak}>
+              desperdício. Receba um diagnóstico
+            </span>
+
+            <span className={styles.lineBreak}>
+              gratuito com um engenheiro.
+            </span>
           </h1>
 
           <p className={styles.subtitleContato}>
-            Conte o que você precisa e receba orientação técnica
-            <br className={styles.hideOnMobile} />
-            personalizada. Sem custos, sem compromisso.
+            <span> Conte o que você precisa e receba orientação técnica </span>
+
+            <span className={styles.lineBreak}>
+              personalizada. Sem custos, sem compromisso.
+            </span>
           </p>
         </div>
 
-    
         <div className={styles.rightColumn}>
           <form ref={form} className={styles.form} onSubmit={sendEmail}>
-      
             <div className={styles.formGroup}>
               <label htmlFor="nome" className={styles.label}>
                 Nome completo *
@@ -66,7 +69,6 @@ const Contato = () => {
                 required
               />
             </div>
-
 
             <div className={styles.formGroup}>
               <label htmlFor="email" className={styles.label}>
@@ -98,7 +100,6 @@ const Contato = () => {
               />
             </div>
 
-   
             <div className={styles.formGroup}>
               <label htmlFor="projeto" className={styles.label}>
                 Tipo de projeto *
@@ -125,7 +126,6 @@ const Contato = () => {
               </select>
             </div>
 
-
             <div className={styles.formGroup}>
               <label htmlFor="mensagem" className={styles.label}>
                 Descreva seu projeto *
@@ -140,7 +140,6 @@ const Contato = () => {
                 required
               />
             </div>
-
 
             <div className={styles.buttonContainer}>
               <button type="submit" className={styles.button}>

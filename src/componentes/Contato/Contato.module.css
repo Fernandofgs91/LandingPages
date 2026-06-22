@@ -1,12 +1,12 @@
 .containerContato {
-  min-height: 100vh; 
-  width: 100%; 
+  min-height: 100vh;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   padding: clamp(1rem, 3vw, 1.5rem);
-  box-sizing: border-box; 
+  box-sizing: border-box;
 }
 
 .overlay {
@@ -34,8 +34,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; 
-  text-align: left;        
+  align-items: flex-start;
+  text-align: left;
   gap: 1.5rem;
   padding: 0 1rem;
   width: 100%;
@@ -60,7 +60,7 @@
 .rightColumn {
   width: 100%;
   max-width: 28rem;
-  background-color: rgba(244, 245, 250, 0.7); 
+  background-color: rgba(244, 245, 250, 0.7);
   backdrop-filter: blur(12px);
   padding: clamp(1.25rem, 3vw, 1.5rem);
   border-radius: 0.75rem;
@@ -71,10 +71,10 @@
 
 .backgroundImage {
   position: absolute;
-  inset: 0; 
-  background-image: 
+  inset: 0;
+  background-image:
     linear-gradient(rgba(0, 31, 91, 0.6), rgba(0, 31, 91, 0.6)),
-    url('../../assets/Contato/planoFundo.png');
+    url("../../assets/Contato/planoFundo.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -125,7 +125,7 @@
   outline: none;
   border-color: #153376;
   box-shadow: 0 0 0 2px rgba(21, 51, 118, 0.2);
-  background-color: #ffffff; 
+  background-color: #ffffff;
 }
 
 .buttonContainer {
@@ -161,32 +161,32 @@
 
 @media (min-width: 768px) {
   .content {
-    flex-direction: row; 
+    flex-direction: row;
     gap: 3rem;
   }
-  
+
   .leftColumn {
-    text-align: left;        
-    align-items: flex-start; 
+    text-align: left;
+    align-items: flex-start;
     gap: 2rem;
   }
-  
+
   .titleContato {
     font-size: clamp(1.8rem, 5vw, 3rem);
   }
-  
+
   .subtitleContato {
     font-size: clamp(1rem, 2vw, 1.25rem);
     text-align: left;
   }
-  
+
   .rightColumn {
     padding: 2rem;
     flex-shrink: 0;
   }
-  
+
   .hideOnMobile {
-    display: block;
+    display: none;
   }
 }
 
@@ -247,79 +247,83 @@
 }
 
 @media (max-width: 768px) {
-  .containerContato { 
+  .containerContato {
     padding: 1.25rem;
   }
-  
+
   .content {
     gap: 2rem;
   }
-  
+
   .leftColumn {
     padding: 0 0.5rem;
     gap: 1rem;
-    text-align: center;      
+    text-align: center;
     align-items: center;
   }
-  
-  .titleContato { 
+
+  .titleContato {
     font-size: clamp(1.3rem, 4vw, 1.75rem);
     text-align: center;
   }
-  
-  .subtitleContato { 
+
+  .subtitleContato {
     font-size: clamp(0.85rem, 2.5vw, 0.9rem);
     max-width: 100%;
     text-align: center;
   }
-  
+
   .rightColumn {
     max-width: 100%;
     padding: 1.5rem;
   }
+    .lineBreak {
+    display: block;
+    margin-top: 0.15rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .containerContato { 
+  .containerContato {
     padding: 1rem;
   }
-  
+
   .content {
     gap: 1.5rem;
   }
-  
+
   .leftColumn {
     gap: 0.75rem;
     padding: 0;
   }
-  
-  .titleContato { 
+
+  .titleContato {
     font-size: clamp(1.2rem, 3.5vw, 1.5rem);
   }
-  
-  .subtitleContato { 
+
+  .subtitleContato {
     font-size: clamp(0.8rem, 2vw, 0.85rem);
     line-height: 1.4;
   }
-  
+
   .rightColumn {
     padding: 1.25rem;
   }
-  
+
   .form {
     gap: 0.875rem;
   }
-  
+
   .label {
     font-size: clamp(0.75rem, 1.5vw, 0.813rem);
   }
-  
+
   .input,
   .select {
     padding: 0.4rem 0.6rem;
     font-size: clamp(0.8rem, 1.5vw, 0.875rem);
   }
-  
+
   .button {
     padding: clamp(0.5rem, 1vw, 0.625rem) 1rem;
     font-size: clamp(0.8rem, 1.5vw, 0.875rem);
@@ -327,7 +331,7 @@
 }
 
 @media (max-width: 320px) {
-  .containerContato { 
+  .containerContato {
     padding: 0.75rem;
   }
 
