@@ -23,11 +23,9 @@ const Header = () => {
             Elaboração de projetos, execução e administração de obra,
             regularização e consultoria, conforme os padrões legais
             normativos dos órgãos municipais.
-          </p>
-
-          <div className={styles.ctaWrapper}>
             <CTA />
-          </div>
+          </p>
+          
         </div>
       </div>
     </section>
