@@ -15,7 +15,7 @@ function Wpp() {
                         chatboxHeight={400} 
                         allowClickAway={true}
                         allowEsc={true}
-                        style={{ marginRight: '20px', marginBottom: '20px' }} // 
+                      
                         />
                         
         </>
