@@ -1,20 +1,42 @@
 .wpp {
   position: fixed;
+  /* Coloque o z-index alto no container principal */
   z-index: 999999 !important; 
 }
 
+/* Garante que o componente flutuante respeite o z-index */
 .wpp :global(.floating-whatsapp) {
   z-index: 999999 !important; 
 }
 
-.wpp :global(.floating-whatsapp .whatsapp-chat-box) {
+/* Ajustes gerais para a caixa de chat (Desktop) */
+.wpp :global(.whatsapp-chat-box) {
   z-index: 999999 !important;
   max-width: 380px;
 }
 
+/* --- CORREÇÃO PARA MOBILE --- */
 @media (max-width: 768px) {
-  .wpp :global(.floating-whatsapp .whatsapp-chat-box) {
+  .wpp :global(.whatsapp-chat-box) {
+    /* Define uma largura segura deixando margem nas duas laterais (10px de cada lado) */
     width: calc(100vw - 20px) !important;
     max-width: 350px !important;
+    
+    /* CORREÇÃO DO CORTE INFERIOR: 
+       Sobe a caixa de chat para ficar acima da barra de navegação do celular */
+    bottom: 85px !important; 
+    
+    /* Alinha a caixinha um pouco mais para a esquerda para não cortar na borda direita */
+    right: 10px !important; 
+    
+    /* Garante que a altura não estoure telas muito pequenas */
+    max-height: 70vh !important; 
+  }
+
+  /* CORREÇÃO DO BOTÃO:
+     Garante que o botão verde circular também suba um pouco para não embolar com a barra do sistema */
+  .wpp :global(.whatsapp-button) {
+    bottom: 20px !important;
+    right: 15px !important;
   }
 }
