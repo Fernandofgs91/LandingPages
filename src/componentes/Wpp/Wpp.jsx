@@ -11,7 +11,7 @@ function Wpp() {
                         statusMessage="disponível"
                         placeholder="Digite a sua mensagem"
                         avatar={LogoOffice}
-                        chatboxHeight={330} 
+                        chatboxHeight={335} 
                         allowClickAway={true}
                         allowEsc={true}
                       
